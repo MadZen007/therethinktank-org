@@ -1,0 +1,1 @@
+This directory is for the Resource Center, to be deployed to `resources.therethinktank.org`. 

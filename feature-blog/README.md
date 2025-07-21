@@ -1,0 +1,1 @@
+This directory is for the Community Blog, to be deployed to `blog.therethinktank.org`. 

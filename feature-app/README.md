@@ -1,0 +1,1 @@
+This directory is for the Core App, to be deployed to `app.therethinktank.org`. 
