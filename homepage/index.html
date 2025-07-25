@@ -26,7 +26,10 @@
       <span class="glowing-title">The Re-Think Tank</span>
       <span class="sub-headline">Helping you find the answers you need...<br>   by changing the questions you ask!</span>
     </h1>
-    <video class="hero-video" src="images/logo-animation.mp4" autoplay loop muted playsinline></video>
+    <div id="hub-image-container" style="position: relative; display: flex; justify-content: center; align-items: center;">
+      <video id="hub-logo-video" class="hero-video" src="images/logo-animation.mp4" autoplay loop muted playsinline style="display: block;"></video>
+      <img id="hub-thinking-gif" src="../clips/thinking.gif" alt="Thinking" style="display: none; max-width: 100%; border-radius: 0.5rem; position: absolute; top: 0; left: 0;" />
+    </div>
     <p class="intro-text">Have you been feeling it?<br>
 This feeling that we’re all so hopelessly divided. That we’re on different teams, living in different realities, fighting for completely opposite things.<br>
 It’s a lie.<br>
@@ -115,5 +118,21 @@ By asking better questions, we can find all the flaws in our own answers, and se
   </div>
 
   <script src="auth.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('hub-image-container');
+  const video = document.getElementById('hub-logo-video');
+  const gif = document.getElementById('hub-thinking-gif');
+
+  container.addEventListener('mouseenter', function() {
+    video.style.display = 'none';
+    gif.style.display = 'block';
+  });
+  container.addEventListener('mouseleave', function() {
+    gif.style.display = 'none';
+    video.style.display = 'block';
+  });
+});
+</script>
 </body>
 </html> 
