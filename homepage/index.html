@@ -7,30 +7,101 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header with Authentication -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-text">Rethink Tank</span>
+      </div>
+      <div class="auth-buttons">
+        <button id="loginBtn" class="btn btn-secondary">Login</button>
+        <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+        <div id="userStatus" class="user-status" style="display: none;">
+          <span id="userName"></span>
+          <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
     <h1 class="main-headline">
       <span class="glowing-title">The Re-Think Tank</span>
-      <span class="sub-headline">Helping you find the answers you need...<br>   by changing the questions you ask!</span>
+      <span class="sub-headline">Helping you find the answers you need...<br>   by changing the questions you ask!</span>
     </h1>
     <video class="hero-video" src="images/logo-animation.mp4" autoplay loop muted playsinline></video>
     <p class="intro-text">[Placeholder for a brief introduction to the project's mission.]</p>
     <div class="features-grid">
       <div class="card">
-        <h2 class="card-title">[Placeholder: Core App]</h2>
-        <p>[Placeholder for a short description.]</p>
-        <a href="https://app.therethinktank.org" class="btn btn-primary">Launch App</a>
+        <h2 class="card-title">Core App</h2>
+        <p>The main application for interactive problem-solving and exploration.</p>
+        <a href="../feature-app/" class="btn btn-primary">Launch App</a>
       </div>
       <div class="card">
-        <h2 class="card-title">[Placeholder: Community Blog]</h2>
-        <p>[Placeholder for a short description.]</p>
-        <a href="https://blog.therethinktank.org" class="btn btn-primary">Read Blog</a>
+        <h2 class="card-title">Community Blog</h2>
+        <p>Insights, stories, and updates from the Rethink Tank community.</p>
+        <a href="../feature-blog/" class="btn btn-primary">Read Blog</a>
       </div>
       <div class="card">
-        <h2 class="card-title">[Placeholder: Resource Center]</h2>
-        <p>[Placeholder for a short description.]</p>
-        <a href="https://resources.therethinktank.org" class="btn btn-primary">View Resources</a>
+        <h2 class="card-title">Resource Center</h2>
+        <p>Guides, documentation, and helpful resources for all users.</p>
+        <a href="../feature-resources/" class="btn btn-primary">View Resources</a>
       </div>
     </div>
   </main>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm" class="auth-form">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class="form-footer">
+        Don't have an account? <a href="#" id="showSignup">Sign up here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm" class="auth-form">
+        <div class="form-group">
+          <label for="signupName">Full Name:</label>
+          <input type="text" id="signupName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email:</label>
+          <input type="email" id="signupEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password:</label>
+          <input type="password" id="signupPassword" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="signupConfirmPassword">Confirm Password:</label>
+          <input type="password" id="signupConfirmPassword" name="confirmPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+      <p class="form-footer">
+        Already have an account? <a href="#" id="showLogin">Login here</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
 </body>
 </html> 
