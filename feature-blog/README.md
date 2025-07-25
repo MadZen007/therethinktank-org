@@ -1,1 +1,5 @@
-This directory is for the Community Blog, to be deployed to `blog.therethinktank.org`. 
+# Community Blog Spoke
+
+This folder will contain the community blog (spoke) for the Rethink Tank hub and spoke architecture.
+
+- Status: Not yet implemented 
