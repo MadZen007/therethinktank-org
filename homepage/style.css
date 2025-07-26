@@ -250,6 +250,25 @@ body {
   box-shadow: 0 0 0 2px rgba(255, 201, 64, 0.2);
 }
 
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--primary-foreground);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(255, 201, 64, 0.2);
+}
+
 .password-hint {
   display: block;
   font-size: 0.8rem;
