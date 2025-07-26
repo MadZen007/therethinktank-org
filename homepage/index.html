@@ -70,17 +70,7 @@
       <img id="hub-thinking-gif" src="images/thinking.gif" alt="Thinking" class="hero-video" style="display: none;" />
     </div>
     
-    <!-- Call to Action Section -->
-    <div class="cta-section">
-      <p class="cta-text">Ready to think differently?</p>
-      <div class="cta-buttons-grid">
-        <button id="ctaSignupBtn" class="btn btn-primary btn-large">Join the Conversation</button>
-        <button id="ctaContactBtn" class="btn btn-secondary btn-large">Get in Touch</button>
-        <button id="ctaExploreBtn" class="btn btn-secondary btn-large">Explore Tools</button>
-        <button id="newsletterBtn" class="btn btn-primary btn-large">Newsletter</button>
-      </div>
-    </div>
-                  <div class="features-grid">
+                <div class="features-grid">
                 <div class="card">
                   <h2 class="card-title">Micro SaaS tools</h2>
                   <p>Let us help you work Smarter, not Harder!</p>
@@ -95,6 +85,11 @@
                   <h2 class="card-title">Articles</h2>
                   <p>Interesting ideas from all over</p>
                   <a href="articles.html" class="btn btn-primary">Let's expand our minds!</a>
+                </div>
+                <div class="card">
+                  <h2 class="card-title">Newsletter</h2>
+                  <p>Stay updated with our latest insights</p>
+                  <button id="newsletterCardBtn" class="btn btn-primary">Subscribe</button>
                 </div>
               </div>
     <p class="intro-text">Have you been feeling it?<br>
@@ -279,28 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
     video.style.display = 'block';
   });
   
-  // CTA Buttons functionality
-  const ctaSignupBtn = document.getElementById('ctaSignupBtn');
-  const ctaContactBtn = document.getElementById('ctaContactBtn');
-  const ctaExploreBtn = document.getElementById('ctaExploreBtn');
-  
-  if (ctaSignupBtn) {
-    ctaSignupBtn.addEventListener('click', function() {
-      document.getElementById('signupBtn').click();
-    });
-  }
-  
-  if (ctaContactBtn) {
-    ctaContactBtn.addEventListener('click', function() {
-      document.getElementById('contactUsBtn').click();
-    });
-  }
-  
-  if (ctaExploreBtn) {
-    ctaExploreBtn.addEventListener('click', function() {
-      window.location.href = 'micro-saas.html';
-    });
-  }
+
 });
   </script>
   

@@ -51,7 +51,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
 }
@@ -703,43 +703,7 @@ select:focus {
   }
 }
 
-/* Call to Action Section */
-.cta-section {
-  text-align: center;
-  margin: 3rem 0;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(85, 33, 138, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
-  border-radius: 1rem;
-  border: 1px solid var(--border);
-}
 
-.cta-text {
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 2rem;
-  font-weight: 500;
-}
-
-.cta-buttons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.btn-large {
-  font-size: 1.1rem;
-  padding: 1rem 1.5rem;
-  border-radius: 2rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.btn-large:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(85, 33, 138, 0.4);
-}
 
 /* Enhanced Card Animations */
 .card {
@@ -775,27 +739,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Enhanced Mobile Experience */
-@media (max-width: 768px) {
-  .cta-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-  }
-  
-  .cta-text {
-    font-size: 1.1rem;
-  }
-  
-  .btn-large {
-    font-size: 1rem;
-    padding: 0.9rem 1.2rem;
-  }
-  
-  .cta-buttons-grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-}
+
 
 /* Newsletter Modal Styles */
 .newsletter-intro {

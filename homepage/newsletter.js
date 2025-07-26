@@ -8,8 +8,8 @@ class NewsletterForm {
   }
 
   setupEventListeners() {
-    // Newsletter button in CTA section
-    document.getElementById('newsletterBtn').addEventListener('click', (e) => {
+    // Newsletter button in feature card
+    document.getElementById('newsletterCardBtn').addEventListener('click', (e) => {
       e.preventDefault();
       this.openNewsletterModal();
     });
