@@ -630,3 +630,75 @@ select:focus {
     font-size: 1.1rem;
   }
 }
+
+/* Placeholder Pages Styles */
+.placeholder-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.construction-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+}
+
+.construction-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.construction-section h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.construction-section p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.construction-section .btn {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+/* Responsive Placeholder Pages */
+@media (max-width: 768px) {
+  .placeholder-content {
+    padding: 1rem;
+  }
+  
+  .construction-section {
+    padding: 2rem 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .construction-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .construction-section p {
+    font-size: 1rem;
+  }
+  
+  .construction-image {
+    max-width: 300px;
+  }
+}
