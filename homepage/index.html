@@ -73,7 +73,12 @@
     <!-- Call to Action Section -->
     <div class="cta-section">
       <p class="cta-text">Ready to think differently?</p>
-      <button id="ctaSignupBtn" class="btn btn-primary btn-large">Join the Conversation</button>
+      <div class="cta-buttons-grid">
+        <button id="ctaSignupBtn" class="btn btn-primary btn-large">Join the Conversation</button>
+        <button id="ctaContactBtn" class="btn btn-secondary btn-large">Get in Touch</button>
+        <button id="ctaExploreBtn" class="btn btn-secondary btn-large">Explore Tools</button>
+        <button id="newsletterBtn" class="btn btn-primary btn-large">Newsletter</button>
+      </div>
     </div>
                   <div class="features-grid">
                 <div class="card">
@@ -223,8 +228,42 @@ By asking better questions, we can find all the flaws in our own answers, and se
     </div>
   </div>
 
+  <!-- Newsletter Modal -->
+  <div id="newsletterModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Stay Updated</h2>
+      <p class="newsletter-intro">Get the latest insights on critical thinking, problem-solving, and thought-provoking content delivered to your inbox.</p>
+      <form id="newsletterForm" class="auth-form">
+        <div class="form-group">
+          <label for="newsletterName">Name:</label>
+          <input type="text" id="newsletterName" name="name" required minlength="2">
+        </div>
+        <div class="form-group">
+          <label for="newsletterEmail">Email:</label>
+          <input type="email" id="newsletterEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="newsletterConsent" name="consent" required>
+            <span class="checkmark"></span>
+            I agree to receive email updates from The Re-Think Tank
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="newsletterSubmitBtn">
+          <span class="btn-text">Subscribe to Newsletter</span>
+          <span class="spinner" style="display: none;"></span>
+        </button>
+      </form>
+      <p class="form-footer">
+        <small>We respect your privacy. Unsubscribe at any time.</small>
+      </p>
+    </div>
+  </div>
+
   <script src="auth.js"></script>
   <script src="contact.js"></script>
+  <script src="newsletter.js"></script>
   <script>
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.getElementById('hub-image-container');
@@ -240,11 +279,26 @@ document.addEventListener('DOMContentLoaded', function() {
     video.style.display = 'block';
   });
   
-  // CTA Button functionality
+  // CTA Buttons functionality
   const ctaSignupBtn = document.getElementById('ctaSignupBtn');
+  const ctaContactBtn = document.getElementById('ctaContactBtn');
+  const ctaExploreBtn = document.getElementById('ctaExploreBtn');
+  
   if (ctaSignupBtn) {
     ctaSignupBtn.addEventListener('click', function() {
       document.getElementById('signupBtn').click();
+    });
+  }
+  
+  if (ctaContactBtn) {
+    ctaContactBtn.addEventListener('click', function() {
+      document.getElementById('contactUsBtn').click();
+    });
+  }
+  
+  if (ctaExploreBtn) {
+    ctaExploreBtn.addEventListener('click', function() {
+      window.location.href = 'micro-saas.html';
     });
   }
 });

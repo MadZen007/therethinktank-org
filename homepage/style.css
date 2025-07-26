@@ -716,15 +716,24 @@ select:focus {
 .cta-text {
   font-size: 1.3rem;
   color: #fff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-weight: 500;
 }
 
+.cta-buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .btn-large {
-  font-size: 1.2rem;
-  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
   border-radius: 2rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-large:hover {
@@ -778,7 +787,48 @@ html {
   }
   
   .btn-large {
-    font-size: 1.1rem;
-    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
   }
+  
+  .cta-buttons-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+/* Newsletter Modal Styles */
+.newsletter-intro {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+  margin-top: 0.2rem;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+
+.checkbox-label input[type="checkbox"]:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.form-footer small {
+  color: #999;
+  font-size: 0.8rem;
 }
