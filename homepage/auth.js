@@ -1,6 +1,6 @@
 // Initialize Supabase client
-const SUPABASE_URL = 'https://frbezuskdytnpuraksbf.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyYmV6dXNrZHl0bnB1cmFrc2JmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0Mzk4NTMsImV4cCI6MjA2OTAxNTg1M30.3D9zJtYvghWANiC0k_QzVCOGu5J56Q_FnZG3DSiMPu8';
+const SUPABASE_URL = '%%SUPABASE_URL%%';
+const SUPABASE_ANON_KEY = '%%SUPABASE_ANON_KEY%%';
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 class AuthSystem {

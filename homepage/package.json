@@ -1,0 +1,11 @@
+{
+  "name": "rethink-tank-homepage",
+  "version": "1.0.0",
+  "description": "Rethink Tank homepage with Supabase authentication",
+  "scripts": {
+    "build": "node build.js",
+    "vercel-build": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+} 
