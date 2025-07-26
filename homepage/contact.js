@@ -15,6 +15,15 @@ class ContactForm {
       this.openContactModal();
     });
 
+    // Contact button in feature card
+    const contactCardBtn = document.querySelector('.features-grid .card:nth-child(2) .btn');
+    if (contactCardBtn) {
+      contactCardBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openContactModal();
+      });
+    }
+
     // Contact form submission
     document.getElementById('contactForm').addEventListener('submit', (e) => this.handleSubmit(e));
   }
@@ -116,7 +125,11 @@ class ContactForm {
       }
 
       this.showMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
-      this.closeContactModal();
+      
+      // Keep modal open for a moment so user sees success message
+      setTimeout(() => {
+        this.closeContactModal();
+      }, 3000);
       
     } catch (error) {
       console.error('Contact form error:', error);
