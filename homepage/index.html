@@ -32,9 +32,7 @@
     "url": "https://therethinktank.org",
     "logo": "https://therethinktank.org/images/logo-animation.mp4",
     "sameAs": [
-      "https://twitter.com/therethinktank",
-      "https://linkedin.com/company/therethinktank",
-      "https://youtube.com/@therethinktank"
+      "https://www.facebook.com/profile.php?id=100092941872592"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -70,6 +68,12 @@
     <div id="hub-image-container" style="display: flex; justify-content: center; align-items: center;">
       <video id="hub-logo-video" class="hero-video" src="images/logo-animation.mp4" autoplay loop muted playsinline style="display: block;"></video>
       <img id="hub-thinking-gif" src="images/thinking.gif" alt="Thinking" class="hero-video" style="display: none;" />
+    </div>
+    
+    <!-- Call to Action Section -->
+    <div class="cta-section">
+      <p class="cta-text">Ready to think differently?</p>
+      <button id="ctaSignupBtn" class="btn btn-primary btn-large">Join the Conversation</button>
     </div>
                   <div class="features-grid">
                 <div class="card">
@@ -235,6 +239,14 @@ document.addEventListener('DOMContentLoaded', function() {
     gif.style.display = 'none';
     video.style.display = 'block';
   });
+  
+  // CTA Button functionality
+  const ctaSignupBtn = document.getElementById('ctaSignupBtn');
+  if (ctaSignupBtn) {
+    ctaSignupBtn.addEventListener('click', function() {
+      document.getElementById('signupBtn').click();
+    });
+  }
 });
   </script>
   
@@ -256,9 +268,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="../feature-app/">Micro SaaS Tools</a></li>
-          <li><a href="../feature-blog/">Contact Us</a></li>
-          <li><a href="../feature-resources/">Articles</a></li>
+          <li><a href="micro-saas.html">Micro SaaS Tools</a></li>
+          <li><a href="#" id="contactUsBtn">Contact Us</a></li>
+          <li><a href="articles.html">Articles</a></li>
         </ul>
       </div>
       

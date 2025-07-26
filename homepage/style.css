@@ -702,3 +702,83 @@ select:focus {
     max-width: 300px;
   }
 }
+
+/* Call to Action Section */
+.cta-section {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(85, 33, 138, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+.cta-text {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.btn-large {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(85, 33, 138, 0.4);
+}
+
+/* Enhanced Card Animations */
+.card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 25px 40px -10px rgba(85, 33, 138, 0.6);
+}
+
+/* Loading Animation for Video */
+.hero-video {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Enhanced Focus Styles */
+.btn:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Mobile Experience */
+@media (max-width: 768px) {
+  .cta-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+  
+  .cta-text {
+    font-size: 1.1rem;
+  }
+  
+  .btn-large {
+    font-size: 1.1rem;
+    padding: 0.9rem 2rem;
+  }
+}
