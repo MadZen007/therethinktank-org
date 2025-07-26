@@ -103,7 +103,7 @@ class ContactForm {
 
     try {
       // Send to your backend/API endpoint
-      const response = await fetch('/api/contact', {
+      const response = await fetch('./api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
