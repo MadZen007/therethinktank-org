@@ -8,14 +8,18 @@
     "test": "node index.js",
     "dev": "node server.js"
   },
-  "keywords": ["lead-generation", "scraping", "business-leads"],
+  "keywords": [
+    "lead-generation",
+    "scraping",
+    "business-leads"
+  ],
   "author": "The Re-Think Tank",
   "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.8.0",
     "axios": "^1.7.2",
     "cheerio": "^1.1.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.6.1",
     "express": "^4.18.2",
     "puppeteer": "^22.12.1"
   }

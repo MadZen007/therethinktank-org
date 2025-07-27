@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const generateLeadsHandler = require('./api/generate-leads');
@@ -17,24 +18,7 @@ app.get('/', (req, res) => {
 // API endpoint for generating leads
 app.post('/api/generate-leads', generateLeadsHandler);
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error('Server error:', err);
-  res.status(500).json({ error: 'Internal server error' });
-});
-
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: 'Not found' });
-});
-
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Lead Generator server running on http://localhost:${PORT}`);
-  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-}); 
+  console.log('Server running on http://localhost:' + PORT);
+});
