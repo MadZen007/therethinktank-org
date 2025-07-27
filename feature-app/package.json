@@ -1,0 +1,22 @@
+{
+  "name": "feature-app",
+  "version": "1.0.0",
+  "description": "This folder will contain the main application (spoke) for the Rethink Tank hub and spoke architecture.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node index.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["lead-generation", "scraping", "business-leads"],
+  "author": "The Re-Think Tank",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.8.0",
+    "axios": "^1.7.2",
+    "cheerio": "^1.1.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "puppeteer": "^22.12.1"
+  }
+}

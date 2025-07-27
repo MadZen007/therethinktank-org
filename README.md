@@ -1,22 +1,61 @@
-#### **Project: The Re-Think Tank**
+# Lead Generation Spoke
 
-**Architectural Overview**
+This is a standalone spoke for the Rethink Tank hub, providing **free lead generation** using LinkedIn scraping and Supabase storage.
 
-This project uses a "Hub and Spoke" architecture to ensure maximum stability and development flexibility.
+## Features
+- ✅ **LinkedIn Scraping** - Extract leads from LinkedIn search results
+- ✅ **Supabase Storage** - Store leads in your database
+- ✅ **Rate Limiting** - Respectful scraping with delays
+- ✅ **Simple Interface** - Easy-to-use frontend (coming soon)
 
--   **The Hub (`/homepage`):** This is the main landing page. It is a simple, static site containing no complex application logic. Its only job is to be stable and direct users to the feature applications.
--   **The Spokes (`/feature-*`):** These are independent applications. Each directory (e.g., `feature-app`) is intended to be developed and deployed as a separate project. They are completely decoupled from the homepage.
+## Setup
 
-**Deployment Strategy**
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-1.  **Homepage (`therethinktank.org`):** Deploy the contents of the `/homepage` directory to a static hosting provider (e.g., Vercel, Netlify, AWS S3). The `A` record for `therethinktank.org` should point to this deployment.
-2.  **Features (Subdomains):** Each `feature-*` directory will be deployed as its own application. You must configure `CNAME` records in your DNS provider for each one.
-    - `app` -> points to the deployment of the `feature-app`.
-    - `blog` -> points to the deployment of the `feature-blog`.
-    - `resources` -> points to the deployment of the `feature-resources`.
+### 2. Set Up Supabase
+1. Create a new Supabase project at [supabase.com](https://supabase.com)
+2. Go to **SQL Editor** and run the contents of `supabase-schema.sql`
+3. Get your project URL and anon key from **Settings > API**
 
-**Benefits of this Approach**
+### 3. Configure Environment Variables
+Create a `.env` file with:
+```
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
--   **Error Isolation:** A critical error in the `app` feature will have zero effect on the main domain or the `blog` feature.
--   **Technology Freedom:** The blog can be a WordPress site, the app can be a React app, etc. They do not share dependencies.
--   **Independent Development:** Teams can work on features independently without causing merge conflicts or breaking the main site. 
+### 4. Test the Scraper
+```bash
+node index.js
+```
+
+## Usage
+
+### Command Line
+```javascript
+const { generateLeads } = require('./index.js');
+
+// Generate leads for "Marketing Director"
+const result = await generateLeads('Marketing Director', 10);
+console.log(`Found ${result.leads_count} leads`);
+```
+
+### Web Interface (Coming Soon)
+- Simple form to input search criteria
+- Real-time scraping progress
+- Download results as CSV
+
+## Important Notes
+- **Respectful Scraping**: Built-in delays to avoid overwhelming LinkedIn
+- **Free Forever**: No API costs or monthly fees
+- **Data Quality**: Extracts name, title, company, location, and LinkedIn URL
+- **Legal Compliance**: Use responsibly and in accordance with LinkedIn's terms
+
+## Next Steps
+- [ ] Add web interface
+- [ ] Email finding integration
+- [ ] Export functionality
+- [ ] Lead management dashboard 
