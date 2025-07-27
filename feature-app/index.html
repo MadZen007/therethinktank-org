@@ -95,6 +95,23 @@
             border-color: #667eea;
         }
 
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -228,6 +245,43 @@
             color: #333;
         }
 
+        .email-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .email-section h4 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .email-content {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .email-content pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+            color: #333;
+        }
+
+        .copy-btn {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+
         .progress-bar {
             width: 100%;
             height: 8px;
@@ -248,6 +302,58 @@
             margin-top: 1rem;
             color: #666;
             font-style: italic;
+        }
+
+        .section-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+            border-color: #bbb;
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .download-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #f0f9eb;
+            border: 1px solid #a5d6a7;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .download-info h3 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-info p {
+            color: #555;
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
@@ -306,6 +412,105 @@
                 </form>
             </div>
 
+            <div class="form-section">
+                <h2>Your Business Information</h2>
+                <p class="section-description">This information will be used to create personalized outreach emails for each lead.</p>
+                <form id="businessForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userName">Your Name *</label>
+                            <input type="text" id="userName" name="userName" 
+                                   placeholder="e.g., John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userTitle">Your Title</label>
+                            <input type="text" id="userTitle" name="userTitle" 
+                                   placeholder="e.g., CEO, Founder, Consultant">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName" 
+                                   placeholder="e.g., The Re-Think Tank" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Your Email *</label>
+                            <input type="email" id="userEmail" name="userEmail" 
+                                   placeholder="e.g., john@company.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceCategory">What type of service do you provide? *</label>
+                        <select id="serviceCategory" name="serviceCategory" required>
+                            <option value="">Select your service type</option>
+                            <option value="consulting">Consulting/Advisory</option>
+                            <option value="software">Software/SaaS</option>
+                            <option value="training">Training/Education</option>
+                            <option value="marketing">Marketing/Agency</option>
+                            <option value="financial">Financial Services</option>
+                            <option value="legal">Legal Services</option>
+                            <option value="healthcare">Healthcare/Medical</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="retail">Retail/E-commerce</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceDescription">Describe your service in detail *</label>
+                        <textarea id="serviceDescription" name="serviceDescription" rows="4" 
+                                  placeholder="What specific problems do you solve? Who do you help? What makes you unique? Be specific about the value you provide." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="targetIndustries">Target Industries</label>
+                            <input type="text" id="targetIndustries" name="targetIndustries" 
+                                   placeholder="e.g., Technology, Healthcare, Finance, Manufacturing">
+                        </div>
+                        <div class="form-group">
+                            <label for="companySize">Preferred Company Size</label>
+                            <select id="companySize" name="companySize">
+                                <option value="">Any size</option>
+                                <option value="startup">Startups (1-50 employees)</option>
+                                <option value="small">Small Business (51-200 employees)</option>
+                                <option value="medium">Medium Business (201-1000 employees)</option>
+                                <option value="large">Large Enterprise (1000+ employees)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="targetRoles">Target Job Roles</label>
+                            <input type="text" id="targetRoles" name="targetRoles" 
+                                   placeholder="e.g., CEO, Marketing Director, CTO, HR Manager">
+                        </div>
+                        <div class="form-group">
+                            <label for="targetLocations">Target Locations</label>
+                            <input type="text" id="targetLocations" name="targetLocations" 
+                                   placeholder="e.g., New York, California, Remote, International">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="targetBenefit">What's the main benefit for your prospects?</label>
+                        <input type="text" id="targetBenefit" name="targetBenefit" 
+                               placeholder="e.g., Increase sales by 30%, Reduce costs by 50%, Improve efficiency">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="callToAction">What do you want them to do next?</label>
+                        <input type="text" id="callToAction" name="callToAction" 
+                               placeholder="e.g., Schedule a 15-minute call, Download our guide, Get a free consultation">
+                    </div>
+                </form>
+            </div>
+
             <div id="status" class="status" style="display: none;"></div>
             
             <div class="progress-bar" id="progressBar" style="display: none;">
@@ -315,6 +520,16 @@
             <div class="estimated-time" id="estimatedTime" style="display: none;"></div>
 
             <div id="results" class="results"></div>
+
+            <div id="downloadSection" style="display: none;">
+                <div class="download-info">
+                    <h3>📧 Personalized Outreach Ready!</h3>
+                    <p>Each lead has a custom email written specifically for them. You can copy/paste these emails directly into your email client.</p>
+                    <button class="btn btn-secondary" id="downloadBtn">
+                        📄 Download Report (PDF)
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -332,6 +547,10 @@
                 document.getElementById('leadForm').addEventListener('submit', (e) => {
                     e.preventDefault();
                     this.generateLeads();
+                });
+
+                document.getElementById('downloadBtn').addEventListener('click', () => {
+                    this.downloadReport();
                 });
             }
 
@@ -386,7 +605,20 @@
                     return;
                 }
 
-                const leadsHtml = result.leads.map(lead => `
+                // Get business information
+                const businessInfo = this.getBusinessInfo();
+                if (!businessInfo) {
+                    this.showStatus('Please fill out your business information first.', 'error');
+                    return;
+                }
+
+                // Generate personalized emails for each lead
+                const leadsWithEmails = result.leads.map(lead => ({
+                    ...lead,
+                    personalizedEmail: this.generatePersonalizedEmail(lead, businessInfo)
+                }));
+
+                const leadsHtml = leadsWithEmails.map(lead => `
                     <div class="lead-card">
                         <div class="lead-header">
                             <div class="lead-name">${lead.name || 'Unknown'}</div>
@@ -410,6 +642,15 @@
                                 <div class="detail-value">${lead.location || 'Not found'}</div>
                             </div>
                         </div>
+                        <div class="email-section">
+                            <h4>📧 Personalized Email</h4>
+                            <div class="email-content">
+                                <pre>${lead.personalizedEmail}</pre>
+                            </div>
+                            <button class="btn btn-secondary copy-btn" onclick="navigator.clipboard.writeText('${lead.personalizedEmail.replace(/'/g, "\\'")}')">
+                                📋 Copy Email
+                            </button>
+                        </div>
                     </div>
                 `).join('');
 
@@ -420,6 +661,248 @@
                     </div>
                     ${leadsHtml}
                 `;
+
+                // Show download section
+                document.getElementById('downloadSection').style.display = 'block';
+                
+                // Store results for download
+                this.currentResults = {
+                    ...result,
+                    leads: leadsWithEmails,
+                    businessInfo: businessInfo
+                };
+            }
+
+            getBusinessInfo() {
+                const form = document.getElementById('businessForm');
+                const formData = new FormData(form);
+                
+                const businessInfo = {
+                    userName: formData.get('userName'),
+                    userTitle: formData.get('userTitle'),
+                    companyName: formData.get('companyName'),
+                    userEmail: formData.get('userEmail'),
+                    serviceCategory: formData.get('serviceCategory'),
+                    serviceDescription: formData.get('serviceDescription'),
+                    targetIndustries: formData.get('targetIndustries'),
+                    companySize: formData.get('companySize'),
+                    targetRoles: formData.get('targetRoles'),
+                    targetLocations: formData.get('targetLocations'),
+                    targetBenefit: formData.get('targetBenefit'),
+                    callToAction: formData.get('callToAction')
+                };
+
+                // Check if required fields are filled
+                if (!businessInfo.userName || !businessInfo.companyName || !businessInfo.userEmail || !businessInfo.serviceDescription || !businessInfo.serviceCategory) {
+                    return null;
+                }
+
+                return businessInfo;
+            }
+
+            generatePersonalizedEmail(lead, businessInfo) {
+                const leadName = lead.name || 'there';
+                const leadCompany = lead.company || 'your company';
+                const leadTitle = lead.title || 'your role';
+                
+                // Create personalized subject line based on service category
+                let subjectLine = this.generateSubjectLine(lead, businessInfo);
+                
+                // Generate email body with enhanced personalization
+                let emailBody = `Hi ${leadName},\n\n`;
+                
+                // Opening based on service category and target criteria
+                emailBody += this.generateOpening(lead, businessInfo);
+                
+                // Service description with category context
+                emailBody += `At ${businessInfo.companyName}, ${businessInfo.serviceDescription}\n\n`;
+                
+                // Industry-specific messaging
+                if (businessInfo.targetIndustries) {
+                    emailBody += this.generateIndustryMessage(lead, businessInfo);
+                }
+                
+                // Benefit messaging
+                if (businessInfo.targetBenefit) {
+                    emailBody += `We've helped companies like yours ${businessInfo.targetBenefit}.\n\n`;
+                }
+                
+                // Company size relevance
+                if (businessInfo.companySize && businessInfo.companySize !== '') {
+                    emailBody += this.generateSizeMessage(businessInfo.companySize);
+                }
+                
+                // Closing with call to action
+                emailBody += this.generateClosing(lead, businessInfo);
+                
+                // Signature
+                emailBody += `Best regards,\n`;
+                emailBody += `${businessInfo.userName}`;
+                if (businessInfo.userTitle) {
+                    emailBody += `\n${businessInfo.userTitle}`;
+                }
+                emailBody += `\n${businessInfo.companyName}`;
+                emailBody += `\n${businessInfo.userEmail}`;
+                
+                return `Subject: ${subjectLine}\n\n${emailBody}`;
+            }
+
+            generateSubjectLine(lead, businessInfo) {
+                const leadCompany = lead.company || 'your company';
+                const serviceCategory = businessInfo.serviceCategory;
+                
+                const subjectTemplates = {
+                    'consulting': `Quick question about ${leadCompany} - ${businessInfo.companyName}`,
+                    'software': `${businessInfo.companyName} - Helping ${leadCompany} optimize operations`,
+                    'training': `Training opportunity for ${leadCompany} team`,
+                    'marketing': `Marketing insights for ${leadCompany}`,
+                    'financial': `Financial optimization for ${leadCompany}`,
+                    'legal': `Legal consultation opportunity - ${leadCompany}`,
+                    'healthcare': `Healthcare solutions for ${leadCompany}`,
+                    'real-estate': `Real estate opportunities for ${leadCompany}`,
+                    'manufacturing': `Manufacturing optimization for ${leadCompany}`,
+                    'retail': `Retail growth strategies for ${leadCompany}`,
+                    'other': `Partnership opportunity - ${leadCompany} & ${businessInfo.companyName}`
+                };
+                
+                return subjectTemplates[serviceCategory] || `Quick question about ${leadCompany} - ${businessInfo.companyName}`;
+            }
+
+            generateOpening(lead, businessInfo) {
+                const leadCompany = lead.company || 'your company';
+                const leadTitle = lead.title || 'your role';
+                const serviceCategory = businessInfo.serviceCategory;
+                
+                const openingTemplates = {
+                    'consulting': `I came across ${leadCompany} and was impressed by your approach to ${leadTitle}. I think there might be an opportunity for us to help each other.\n\n`,
+                    'software': `I noticed ${leadCompany} is growing, and as someone in ${leadTitle}, you're likely looking for ways to scale efficiently. `,
+                    'training': `I see ${leadCompany} is expanding, and as the ${leadTitle}, you're probably focused on team development. `,
+                    'marketing': `I've been following ${leadCompany}'s growth, and as the ${leadTitle}, you're clearly driving results. `,
+                    'financial': `I noticed ${leadCompany} is in a growth phase, and as the ${leadTitle}, you're likely focused on financial optimization. `,
+                    'legal': `I came across ${leadCompany} and noticed you're in ${leadTitle}. There might be some legal opportunities we could explore together. `,
+                    'healthcare': `I see ${leadCompany} is making an impact in healthcare, and as the ${leadTitle}, you're focused on improving patient outcomes. `,
+                    'real-estate': `I noticed ${leadCompany}'s presence in the market, and as the ${leadTitle}, you're likely looking for growth opportunities. `,
+                    'manufacturing': `I see ${leadCompany} is in manufacturing, and as the ${leadTitle}, you're probably focused on operational efficiency. `,
+                    'retail': `I noticed ${leadCompany}'s retail presence, and as the ${leadTitle}, you're likely focused on customer growth. `,
+                    'other': `I came across ${leadCompany} and was impressed by what you're doing. As the ${leadTitle}, I think there might be an opportunity for us to help each other.\n\n`
+                };
+                
+                return openingTemplates[serviceCategory] || `I came across ${leadCompany} and was impressed by what you're doing. I noticed you're in ${leadTitle}, and I think there might be an opportunity for us to help each other.\n\n`;
+            }
+
+            generateIndustryMessage(lead, businessInfo) {
+                const targetIndustries = businessInfo.targetIndustries.toLowerCase();
+                const leadCompany = lead.company || 'your company';
+                
+                // Check if lead's company might be in target industries
+                const industryKeywords = {
+                    'technology': ['tech', 'software', 'ai', 'digital', 'online'],
+                    'healthcare': ['health', 'medical', 'pharma', 'bio', 'care'],
+                    'finance': ['financial', 'bank', 'insurance', 'investment', 'fintech'],
+                    'manufacturing': ['manufacturing', 'industrial', 'factory', 'production']
+                };
+                
+                for (const [industry, keywords] of Object.entries(industryKeywords)) {
+                    if (targetIndustries.includes(industry)) {
+                        for (const keyword of keywords) {
+                            if (leadCompany.toLowerCase().includes(keyword)) {
+                                return `I noticed ${leadCompany} is in the ${industry} space, which is exactly the type of company we love working with.\n\n`;
+                            }
+                        }
+                    }
+                }
+                
+                return '';
+            }
+
+            generateSizeMessage(companySize) {
+                const sizeMessages = {
+                    'startup': `We specialize in helping startups like yours scale efficiently and avoid common pitfalls.\n\n`,
+                    'small': `We work well with small businesses that are ready to grow and optimize their operations.\n\n`,
+                    'medium': `Medium-sized companies like yours are perfect for our solutions - you're big enough to benefit from optimization but agile enough to implement changes quickly.\n\n`,
+                    'large': `We have extensive experience working with large enterprises to streamline their processes and improve efficiency.\n\n`
+                };
+                
+                return sizeMessages[companySize] || '';
+            }
+
+            generateClosing(lead, businessInfo) {
+                const leadCompany = lead.company || 'your company';
+                
+                if (businessInfo.callToAction) {
+                    return `I'd love to learn more about your current challenges and see if there's a way we could help ${leadCompany}.\n\n${businessInfo.callToAction}?\n\n`;
+                } else {
+                    return `I'd love to learn more about your current challenges and see if there's a way we could help ${leadCompany}.\n\nWould you be open to a quick 15-minute call to discuss this?\n\n`;
+                }
+            }
+
+            downloadReport() {
+                if (!this.currentResults) {
+                    this.showStatus('No results to download.', 'error');
+                    return;
+                }
+
+                const report = this.generateReport();
+                const blob = new Blob([report], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `lead-report-${new Date().toISOString().split('T')[0]}.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }
+
+            generateReport() {
+                const { leads, businessInfo, leads_count, average_quality_score } = this.currentResults;
+                
+                let report = `LEAD GENERATION REPORT\n`;
+                report += `Generated on: ${new Date().toLocaleDateString()}\n`;
+                report += `Search Query: ${leads[0]?.search_query || 'Unknown'}\n`;
+                report += `Total Leads: ${leads_count}\n`;
+                report += `Average Quality Score: ${average_quality_score}/100\n\n`;
+                
+                report += `YOUR BUSINESS INFORMATION:\n`;
+                report += `Name: ${businessInfo.userName}\n`;
+                report += `Title: ${businessInfo.userTitle || 'N/A'}\n`;
+                report += `Company: ${businessInfo.companyName}\n`;
+                report += `Email: ${businessInfo.userEmail}\n`;
+                report += `Service Category: ${businessInfo.serviceCategory || 'N/A'}\n`;
+                report += `Service Description: ${businessInfo.serviceDescription}\n`;
+                report += `Target Industries: ${businessInfo.targetIndustries || 'N/A'}\n`;
+                report += `Preferred Company Size: ${businessInfo.companySize || 'Any size'}\n`;
+                report += `Target Roles: ${businessInfo.targetRoles || 'N/A'}\n`;
+                report += `Target Locations: ${businessInfo.targetLocations || 'N/A'}\n`;
+                report += `Target Benefit: ${businessInfo.targetBenefit || 'N/A'}\n`;
+                report += `Call to Action: ${businessInfo.callToAction || 'N/A'}\n\n`;
+                
+                report += `LEAD CRITERIA SUMMARY:\n`;
+                report += `- Service Type: ${businessInfo.serviceCategory || 'Not specified'}\n`;
+                report += `- Target Industries: ${businessInfo.targetIndustries || 'Any industry'}\n`;
+                report += `- Company Size: ${businessInfo.companySize || 'Any size'}\n`;
+                report += `- Target Roles: ${businessInfo.targetRoles || 'Any role'}\n`;
+                report += `- Locations: ${businessInfo.targetLocations || 'Any location'}\n\n`;
+                
+                report += `LEADS AND PERSONALIZED EMAILS:\n`;
+                report += `================================\n\n`;
+                
+                leads.forEach((lead, index) => {
+                    report += `LEAD ${index + 1}\n`;
+                    report += `Name: ${lead.name || 'Unknown'}\n`;
+                    report += `Email: ${lead.email || 'Not found'}\n`;
+                    report += `Phone: ${lead.phone || 'Not found'}\n`;
+                    report += `Company: ${lead.company || 'Not found'}\n`;
+                    report += `Location: ${lead.location || 'Not found'}\n`;
+                    report += `Quality Score: ${lead.quality_score}/100\n`;
+                    report += `URL: ${lead.url || 'Not found'}\n\n`;
+                    
+                    report += `PERSONALIZED EMAIL:\n`;
+                    report += `${lead.personalizedEmail}\n`;
+                    report += `\n${'='.repeat(50)}\n\n`;
+                });
+                
+                return report;
             }
 
             async generateLeads() {
@@ -435,6 +918,14 @@
                     // Calculate estimated time (rough estimate)
                     const estimatedMinutes = Math.ceil(maxResults * 2); // ~2 minutes per lead
                     this.updateProgress(10, `Estimated time: ${estimatedMinutes} minutes`);
+
+                    // Get business information
+                    const businessInfo = this.getBusinessInfo();
+                    if (!businessInfo) {
+                        this.showStatus('Please fill out your business information first.', 'error');
+                        this.setLoading(false);
+                        return;
+                    }
 
                     // Simulate progress updates
                     const progressInterval = setInterval(() => {
@@ -452,7 +943,8 @@
                         },
                         body: JSON.stringify({
                             searchQuery,
-                            maxResults
+                            maxResults,
+                            businessInfo
                         })
                     });
 

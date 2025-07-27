@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { searchQuery, maxResults = 10 } = req.body;
+    const { searchQuery, maxResults = 10, businessInfo } = req.body;
 
     // Validate input
     if (!searchQuery || typeof searchQuery !== 'string') {
@@ -36,8 +36,11 @@ module.exports = async (req, res) => {
 
     console.log(`API: Generated ${result.leads_count} leads with average score ${result.average_quality_score}`);
 
-    // Return results
-    res.status(200).json(result);
+    // Return results with business info for email generation
+    res.status(200).json({
+      ...result,
+      businessInfo: businessInfo || null
+    });
 
   } catch (error) {
     console.error('API Error:', error);
