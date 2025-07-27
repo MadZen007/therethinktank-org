@@ -778,3 +778,106 @@ html {
   color: #999;
   font-size: 0.8rem;
 }
+
+/* Micro SaaS Landing Page Styles */
+.micro-saas-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.hero-image {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.main-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+    text-align: left;
+}
+
+.copy-section {
+    margin: 2rem 0;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.copy-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.benefits-list li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.cta-section {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.btn-large {
+    font-size: 1.3rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+    .micro-saas-content {
+        padding: 1rem;
+    }
+    
+    .intro-text {
+        font-size: 1.2rem;
+    }
+    
+    .copy-text {
+        font-size: 1rem;
+    }
+    
+    .benefits-list li {
+        font-size: 1rem;
+    }
+    
+    .btn-large {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+}

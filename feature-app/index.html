@@ -711,8 +711,14 @@
                 // Generate email body with enhanced personalization
                 let emailBody = `Hi ${leadName},\n\n`;
                 
-                // Opening based on service category and target criteria
-                emailBody += this.generateOpening(lead, businessInfo);
+                // Friendly opening with genuine company appreciation
+                emailBody += this.generateFriendlyOpening(lead, businessInfo);
+                
+                // Company-specific research and appreciation
+                emailBody += this.generateCompanyAppreciation(lead, businessInfo);
+                
+                // Transition to service introduction
+                emailBody += this.generateServiceTransition(lead, businessInfo);
                 
                 // Service description with category context
                 emailBody += `At ${businessInfo.companyName}, ${businessInfo.serviceDescription}\n\n`;
@@ -747,6 +753,116 @@
                 return `Subject: ${subjectLine}\n\n${emailBody}`;
             }
 
+            generateFriendlyOpening(lead, businessInfo) {
+                const leadName = lead.name || 'there';
+                const leadCompany = lead.company || 'your company';
+                const leadTitle = lead.title || 'your role';
+                
+                const friendlyOpenings = [
+                    `Hope you're having a great week! 👋\n\n`,
+                    `Hope this email finds you well! 😊\n\n`,
+                    `Hi there! Hope your week is off to a great start.\n\n`,
+                    `Hey ${leadName}! 👋\n\n`,
+                    `Good morning! Hope your week is off to a great start.\n\n`
+                ];
+                
+                return friendlyOpenings[Math.floor(Math.random() * friendlyOpenings.length)];
+            }
+
+            generateCompanyAppreciation(lead, businessInfo) {
+                const leadCompany = lead.company || 'your company';
+                const leadTitle = lead.title || 'your role';
+                const serviceCategory = businessInfo.serviceCategory;
+                
+                // Generate company-specific appreciation based on service category
+                const appreciationTemplates = {
+                    'consulting': [
+                        `I've been following ${leadCompany} for a while now, and I'm genuinely impressed by how you're approaching ${leadTitle}. Your recent work on [specific area] really caught my attention.\n\n`,
+                        `I came across ${leadCompany} the other day and was blown away by your approach to ${leadTitle}. The way you're handling [specific challenge] is exactly what the industry needs.\n\n`,
+                        `I've been keeping an eye on ${leadCompany} and love what you're doing in the ${leadTitle} space. Your innovative approach to [specific area] is really refreshing.\n\n`
+                    ],
+                    'software': [
+                        `I've been using ${leadCompany}'s platform and I'm genuinely impressed by how you're solving ${leadTitle} challenges. The user experience is fantastic!\n\n`,
+                        `I came across ${leadCompany} recently and was really impressed by your ${leadTitle} solutions. The way you're approaching [specific problem] is exactly what the market needs.\n\n`,
+                        `I've been following ${leadCompany}'s growth and love what you're building in the ${leadTitle} space. Your approach to [specific area] is really innovative.\n\n`
+                    ],
+                    'training': [
+                        `I've been following ${leadCompany}'s journey and I'm really impressed by how you're developing your team in the ${leadTitle} area. Your commitment to growth is inspiring.\n\n`,
+                        `I came across ${leadCompany} and was really impressed by your approach to ${leadTitle} development. The way you're investing in your team's growth is exactly what companies need.\n\n`,
+                        `I've been watching ${leadCompany} grow and love how you're handling ${leadTitle} challenges. Your focus on continuous improvement is really admirable.\n\n`
+                    ],
+                    'marketing': [
+                        `I've been following ${leadCompany}'s marketing efforts and I'm genuinely impressed by your ${leadTitle} strategies. Your recent campaigns are really creative!\n\n`,
+                        `I came across ${leadCompany}'s marketing and was blown away by your approach to ${leadTitle}. The way you're connecting with your audience is exactly what brands need.\n\n`,
+                        `I've been keeping an eye on ${leadCompany}'s growth and love what you're doing in the ${leadTitle} space. Your marketing approach is really innovative.\n\n`
+                    ],
+                    'financial': [
+                        `I've been following ${leadCompany}'s financial strategies and I'm really impressed by how you're handling ${leadTitle} challenges. Your approach to growth is solid.\n\n`,
+                        `I came across ${leadCompany} and was really impressed by your ${leadTitle} approach. The way you're managing financial growth is exactly what companies need.\n\n`,
+                        `I've been watching ${leadCompany} grow and love how you're approaching ${leadTitle} opportunities. Your financial strategy is really well thought out.\n\n`
+                    ],
+                    'healthcare': [
+                        `I've been following ${leadCompany}'s work in healthcare and I'm genuinely impressed by how you're improving ${leadTitle} outcomes. Your impact is really meaningful.\n\n`,
+                        `I came across ${leadCompany} and was really impressed by your approach to ${leadTitle} in healthcare. The way you're helping patients is exactly what the industry needs.\n\n`,
+                        `I've been keeping an eye on ${leadCompany}'s healthcare initiatives and love what you're doing in the ${leadTitle} space. Your work is really making a difference.\n\n`
+                    ],
+                    'other': [
+                        `I've been following ${leadCompany} for a while now, and I'm genuinely impressed by what you're doing in the ${leadTitle} space. Your approach is really innovative.\n\n`,
+                        `I came across ${leadCompany} recently and was really impressed by your work in ${leadTitle}. The way you're approaching challenges is exactly what the industry needs.\n\n`,
+                        `I've been keeping an eye on ${leadCompany} and love what you're building. Your approach to ${leadTitle} is really refreshing.\n\n`
+                    ]
+                };
+                
+                const templates = appreciationTemplates[serviceCategory] || appreciationTemplates['other'];
+                return templates[Math.floor(Math.random() * templates.length)];
+            }
+
+            generateServiceTransition(lead, businessInfo) {
+                const leadCompany = lead.company || 'your company';
+                const serviceCategory = businessInfo.serviceCategory;
+                
+                const transitionTemplates = {
+                    'consulting': [
+                        `It got me thinking - there might be an opportunity for us to help each other.\n\n`,
+                        `That's actually what got me reaching out - I think we could potentially help each other.\n\n`,
+                        `It made me wonder if there's a way we could collaborate.\n\n`
+                    ],
+                    'software': [
+                        `It got me thinking - there might be a way we could help you scale even more efficiently.\n\n`,
+                        `That's actually what got me reaching out - I think we could help you optimize even further.\n\n`,
+                        `It made me wonder if there's a way we could support your growth.\n\n`
+                    ],
+                    'training': [
+                        `It got me thinking - there might be a way we could help you develop your team even further.\n\n`,
+                        `That's actually what got me reaching out - I think we could help you accelerate your team's growth.\n\n`,
+                        `It made me wonder if there's a way we could support your development goals.\n\n`
+                    ],
+                    'marketing': [
+                        `It got me thinking - there might be a way we could help you reach even more people.\n\n`,
+                        `That's actually what got me reaching out - I think we could help you amplify your message.\n\n`,
+                        `It made me wonder if there's a way we could help you grow even faster.\n\n`
+                    ],
+                    'financial': [
+                        `It got me thinking - there might be a way we could help you optimize your financial strategy.\n\n`,
+                        `That's actually what got me reaching out - I think we could help you grow even more efficiently.\n\n`,
+                        `It made me wonder if there's a way we could support your financial goals.\n\n`
+                    ],
+                    'healthcare': [
+                        `It got me thinking - there might be a way we could help you improve outcomes even further.\n\n`,
+                        `That's actually what got me reaching out - I think we could help you enhance your impact.\n\n`,
+                        `It made me wonder if there's a way we could support your mission.\n\n`
+                    ],
+                    'other': [
+                        `It got me thinking - there might be an opportunity for us to help each other.\n\n`,
+                        `That's actually what got me reaching out - I think we could potentially collaborate.\n\n`,
+                        `It made me wonder if there's a way we could work together.\n\n`
+                    ]
+                };
+                
+                const templates = transitionTemplates[serviceCategory] || transitionTemplates['other'];
+                return templates[Math.floor(Math.random() * templates.length)];
+            }
+
             generateSubjectLine(lead, businessInfo) {
                 const leadCompany = lead.company || 'your company';
                 const serviceCategory = businessInfo.serviceCategory;
@@ -766,28 +882,6 @@
                 };
                 
                 return subjectTemplates[serviceCategory] || `Quick question about ${leadCompany} - ${businessInfo.companyName}`;
-            }
-
-            generateOpening(lead, businessInfo) {
-                const leadCompany = lead.company || 'your company';
-                const leadTitle = lead.title || 'your role';
-                const serviceCategory = businessInfo.serviceCategory;
-                
-                const openingTemplates = {
-                    'consulting': `I came across ${leadCompany} and was impressed by your approach to ${leadTitle}. I think there might be an opportunity for us to help each other.\n\n`,
-                    'software': `I noticed ${leadCompany} is growing, and as someone in ${leadTitle}, you're likely looking for ways to scale efficiently. `,
-                    'training': `I see ${leadCompany} is expanding, and as the ${leadTitle}, you're probably focused on team development. `,
-                    'marketing': `I've been following ${leadCompany}'s growth, and as the ${leadTitle}, you're clearly driving results. `,
-                    'financial': `I noticed ${leadCompany} is in a growth phase, and as the ${leadTitle}, you're likely focused on financial optimization. `,
-                    'legal': `I came across ${leadCompany} and noticed you're in ${leadTitle}. There might be some legal opportunities we could explore together. `,
-                    'healthcare': `I see ${leadCompany} is making an impact in healthcare, and as the ${leadTitle}, you're focused on improving patient outcomes. `,
-                    'real-estate': `I noticed ${leadCompany}'s presence in the market, and as the ${leadTitle}, you're likely looking for growth opportunities. `,
-                    'manufacturing': `I see ${leadCompany} is in manufacturing, and as the ${leadTitle}, you're probably focused on operational efficiency. `,
-                    'retail': `I noticed ${leadCompany}'s retail presence, and as the ${leadTitle}, you're likely focused on customer growth. `,
-                    'other': `I came across ${leadCompany} and was impressed by what you're doing. As the ${leadTitle}, I think there might be an opportunity for us to help each other.\n\n`
-                };
-                
-                return openingTemplates[serviceCategory] || `I came across ${leadCompany} and was impressed by what you're doing. I noticed you're in ${leadTitle}, and I think there might be an opportunity for us to help each other.\n\n`;
             }
 
             generateIndustryMessage(lead, businessInfo) {
@@ -829,10 +923,18 @@
             generateClosing(lead, businessInfo) {
                 const leadCompany = lead.company || 'your company';
                 
+                const friendlyClosings = [
+                    `I'd love to learn more about your current challenges and see if there's a way we could help ${leadCompany}.\n\n`,
+                    `I'd be really interested in hearing about what you're working on and seeing if we could support ${leadCompany}.\n\n`,
+                    `I'd love to chat about what you're up to and see if there's a way we could help ${leadCompany} grow.\n\n`
+                ];
+                
+                const closing = friendlyClosings[Math.floor(Math.random() * friendlyClosings.length)];
+                
                 if (businessInfo.callToAction) {
-                    return `I'd love to learn more about your current challenges and see if there's a way we could help ${leadCompany}.\n\n${businessInfo.callToAction}?\n\n`;
+                    return closing + `${businessInfo.callToAction}?\n\n`;
                 } else {
-                    return `I'd love to learn more about your current challenges and see if there's a way we could help ${leadCompany}.\n\nWould you be open to a quick 15-minute call to discuss this?\n\n`;
+                    return closing + `Would you be open to a quick 15-minute call to discuss this?\n\n`;
                 }
             }
 
