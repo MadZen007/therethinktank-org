@@ -8,8 +8,11 @@ export default function ContactForm() {
     email: '',
     message: '',
   })
+  const [newsletterEmail, setNewsletterEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [newsletterMessage, setNewsletterMessage] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -48,6 +51,7 @@ export default function ContactForm() {
   }
 
   return (
+    <>
     <form className="contact-form" onSubmit={handleSubmit}>
       {statusMessage && (
         <div className={`form-message ${status}`}>
@@ -100,5 +104,67 @@ export default function ContactForm() {
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>
     </form>
+
+    {/* Newsletter Signup Section */}
+    <div className="newsletter-signup">
+      <h3>Get Weekly Updates</h3>
+      <p>Sign up for our weekly newsletter to get practical insights and updates.</p>
+      <form 
+        className="newsletter-form"
+        onSubmit={async (e) => {
+          e.preventDefault()
+          setNewsletterStatus('loading')
+          setNewsletterMessage('')
+
+          try {
+            const response = await fetch('/api/newsletter', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email: newsletterEmail }),
+            })
+
+            if (response.ok) {
+              setNewsletterStatus('success')
+              setNewsletterMessage('Thanks! You\'re signed up for the newsletter.')
+              setNewsletterEmail('')
+            } else {
+              const data = await response.json()
+              setNewsletterStatus('error')
+              setNewsletterMessage(data.error || 'Something went wrong. Please try again.')
+            }
+          } catch (error) {
+            setNewsletterStatus('error')
+            setNewsletterMessage('Something went wrong. Please try again.')
+          }
+        }}
+      >
+        {newsletterMessage && (
+          <div className={`form-message ${newsletterStatus}`}>
+            {newsletterMessage}
+          </div>
+        )}
+        <div className="newsletter-input-group">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
+            required
+            disabled={newsletterStatus === 'loading'}
+            className="newsletter-input"
+          />
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={newsletterStatus === 'loading'}
+          >
+            {newsletterStatus === 'loading' ? 'Signing up...' : 'Sign Up'}
+          </button>
+        </div>
+      </form>
+    </div>
+  </>
   )
 }
