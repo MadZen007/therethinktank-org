@@ -80,7 +80,9 @@ export default function ContactForm() {
       </div>
 
       <div className="form-group">
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">
+          Message <span className="label-hint">(be sure to include details about your situation and the results you're hoping to get)</span>
+        </label>
         <textarea
           id="message"
           name="message"
