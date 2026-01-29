@@ -199,8 +199,7 @@ export default function Home() {
               <li>You mainly want a place to vent without any pressure to experiment with new behavior.</li>
             </ul>
             <p>
-              In those situations, local licensed professionals and crisis services are the right move. This intensive is 
-              for people who are functional but stuck, and ready to work.
+              In those situations, local licensed professionals and crisis services are the right move.
             </p>
           </div>
 
