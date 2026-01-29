@@ -38,8 +38,11 @@ export async function POST(request: NextRequest) {
     const recipientEmail = process.env.CONTACT_EMAIL || 'madzenejk@gmail.com'
 
     // Send email via Resend
+    // Use Resend's default domain for testing, or your verified domain
+    const fromEmail = process.env.RESEND_FROM_EMAIL || `onboarding@resend.dev`
+    
     const { data, error } = await resend.emails.send({
-      from: `Contact Form <contact@${process.env.RESEND_FROM_DOMAIN || 'therethinktank.org'}>`,
+      from: fromEmail,
       to: [recipientEmail],
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
@@ -82,8 +85,9 @@ Submitted at: ${new Date().toLocaleString()}
     )
   } catch (error) {
     console.error('Error processing contact form:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: errorMessage },
       { status: 500 }
     )
   }
