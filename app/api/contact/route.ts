@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,19 +25,56 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Add your email sending logic here
-    // For example, using SendGrid, Resend, Nodemailer, etc.
-    // For now, we'll just log the data and return success
-    
-    console.log('Contact form submission:', {
-      name,
-      email,
-      message,
-      timestamp: new Date().toISOString(),
+    // Check if Resend API key is configured
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured')
+      return NextResponse.json(
+        { error: 'Email service is not configured' },
+        { status: 500 }
+      )
+    }
+
+    // Get recipient email from environment variable, fallback to a default
+    const recipientEmail = process.env.CONTACT_EMAIL || 'madzenejk@gmail.com'
+
+    // Send email via Resend
+    const { data, error } = await resend.emails.send({
+      from: `Contact Form <contact@${process.env.RESEND_FROM_DOMAIN || 'therethinktank.org'}>`,
+      to: [recipientEmail],
+      replyTo: email,
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+        <hr>
+        <p><small>Submitted at: ${new Date().toLocaleString()}</small></p>
+      `,
+      text: `
+New Contact Form Submission
+
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+
+---
+Submitted at: ${new Date().toLocaleString()}
+      `,
     })
 
-    // In production, you would send an email here:
-    // await sendEmail({ to: 'your@email.com', subject: 'Contact Form Submission', body: message })
+    if (error) {
+      console.error('Resend error:', error)
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      )
+    }
+
+    console.log('Email sent successfully:', data)
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
