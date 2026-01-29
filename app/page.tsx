@@ -284,12 +284,12 @@ export default function Home() {
                 <strong>Bring me to you.</strong> You cover travel and lodging; I come to your city for the day.
               </li>
               <li>
-                <strong>Come to me.</strong> Treat it as a therapeutic mini‑vacation: fly to Thailand, block off a day for the intensive, and use the rest 
+                <strong>Come to me.</strong> Treat it as a therapeutic mini‑vacation: fly to Thailand, block off a day for the 1x1 session, and use the rest 
                 of the trip to let your system actually downshift.
               </li>
             </ul>
             <p>
-              If travel isn't realistic, we can absolutely run the intensive over video. The key is that you treat it like an in‑person day: full day blocked off, 
+              If travel isn't realistic, we can't absolutely run the intensive over video. The key is that you treat it like an in‑person day: full day blocked off, 
               private space, phone off, no multitasking.
             </p>
             <p>In‑person is the A‑tier option. Online is a strong B‑tier if you show up the same way.</p>
