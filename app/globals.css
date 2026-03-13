@@ -64,36 +64,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 800;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 600;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 54px;
+    font-size: 64px;
   }
   
   h2 {
-    font-size: 36px;
+    font-size: 44px;
   }
 }
 
 p {
   margin-bottom: var(--spacing-sm);
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -113,7 +113,7 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.75rem 2rem;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -184,7 +184,7 @@ a:hover {
 
 .hero-eyebrow {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -198,7 +198,7 @@ a:hover {
 
 .hero h1 {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -207,7 +207,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .hero h1 {
-    font-size: 54px;
+    font-size: 64px;
   }
 }
 
@@ -218,7 +218,7 @@ a:hover {
 
 .hero-body p {
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   color: var(--text-muted);
   margin-bottom: var(--spacing-md);
   font-weight: 400;
@@ -240,7 +240,7 @@ a:hover {
 .hero-cta-secondary {
   margin: 0;
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -271,7 +271,7 @@ a:hover {
 
 .about p {
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   margin-bottom: var(--spacing-md);
   color: var(--text-muted);
@@ -337,7 +337,7 @@ a:hover {
   justify-content: center;
   height: 100%;
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 /* NEW: Wrapper + contain styles for Book 2 cover */
@@ -364,7 +364,7 @@ a:hover {
 
 .book-title {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: var(--spacing-xs);
   color: var(--text-primary);
@@ -372,7 +372,7 @@ a:hover {
 
 .book-description {
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   color: var(--text-muted);
   margin-bottom: var(--spacing-md);
@@ -396,7 +396,7 @@ a:hover {
 
 .faq-item h3 {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
@@ -404,7 +404,7 @@ a:hover {
 
 .faq-item p {
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.6;
@@ -417,7 +417,7 @@ a:hover {
 
 .faq-item ul {
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.6;
@@ -477,14 +477,14 @@ a:hover {
 .label-hint {
   font-weight: 400;
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  font-size: 16px;
+  font-size: 22px;
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -534,7 +534,7 @@ a:hover {
 .btn-submit {
   width: 100%;
   padding: 1rem;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .btn-submit:disabled {
@@ -556,7 +556,7 @@ a:hover {
 
 .newsletter-signup h3 {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
@@ -565,7 +565,7 @@ a:hover {
 .newsletter-signup p {
   color: var(--text-muted);
   margin-bottom: var(--spacing-md);
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .newsletter-form {
@@ -586,7 +586,7 @@ a:hover {
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 22px;
   font-family: var(--font-ibm-plex), 'Segoe UI', system-ui, -apple-system, sans-serif;
   transition: border-color 0.3s ease;
 }
@@ -647,7 +647,7 @@ a:hover {
 .footer p {
   color: var(--text-muted);
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .social-links {
