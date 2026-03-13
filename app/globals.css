@@ -458,6 +458,18 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Simple admin page card styling (used on /rethink-admin-insights) */
+.admin-page .card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: var(--spacing-md);
+}
+
+.admin-page .card h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
 .contact-form {
   margin-top: var(--spacing-md);
 }

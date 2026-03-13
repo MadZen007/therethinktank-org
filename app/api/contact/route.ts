@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { ensureSchema, sql } from '@/lib/db'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -24,6 +25,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Ensure database tables exist
+    await ensureSchema()
 
     // Check if Resend API key is configured
     if (!process.env.RESEND_API_KEY) {
@@ -78,6 +82,12 @@ Submitted at: ${new Date().toLocaleString()}
     }
 
     console.log('Email sent successfully:', data)
+
+    // Store submission for admin analytics
+    await sql`
+      INSERT INTO contact_submissions (name, email, message)
+      VALUES (${name}, ${email}, ${message})
+    `
 
     return NextResponse.json(
       { message: 'Message sent successfully' },

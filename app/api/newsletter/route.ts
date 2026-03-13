@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { ensureSchema, sql } from '@/lib/db'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -24,6 +25,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Ensure database tables exist
+    await ensureSchema()
 
     // Check if Resend API key is configured
     if (!process.env.RESEND_API_KEY) {
@@ -71,8 +75,12 @@ Add this email to your newsletter list to ensure they receive weekly updates.
 
     console.log('Newsletter signup notification sent:', data)
 
-    // TODO: In the future, you could also add the email to Resend's Audience
-    // or a database here for automated newsletter sending
+    // Store subscriber for admin analytics (ignore duplicates)
+    await sql`
+      INSERT INTO newsletter_subscribers (email)
+      VALUES (${email})
+      ON CONFLICT (email) DO NOTHING
+    `
 
     return NextResponse.json(
       { message: 'Successfully signed up for newsletter' },

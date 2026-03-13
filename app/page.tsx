@@ -1,8 +1,21 @@
 'use client'
 
+import { useEffect } from 'react'
 import ContactForm from './components/ContactForm'
 
 export default function Home() {
+  useEffect(() => {
+    // Fire and forget; errors are logged in the API route
+    fetch('/api/track', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ type: 'page_view', path: window.location.pathname }),
+      keepalive: true,
+    }).catch(() => {})
+  }, [])
+
   return (
     <main>
       {/* Hero Section */}
