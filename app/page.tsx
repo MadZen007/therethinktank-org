@@ -298,7 +298,7 @@ export default function Home() {
           <div className="faq-item">
             <h3>How does pricing work?</h3>
             <p>
-              To reserve a full day, there is a <strong>1,000 USD non‑refundable booking fee</strong>.
+              To reserve a full day, there is a <strong>500 USD non‑refundable booking fee</strong>.
             </p>
             <p>
               If you bring me to you, you cover travel and lodging at cost. If you come to me in Bangkok, there are no extra expenses on that front beyond your own travel.
