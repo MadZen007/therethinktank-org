@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { ensureSchema, sql } from '@/lib/db'
 
 async function getMetrics() {
