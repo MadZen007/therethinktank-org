@@ -33,13 +33,13 @@ export default function Home() {
               </p>
               <p>
                 This place is built for people who want triage, not endless processing. We look for the root issue 
-                that hits the most parts of your life at once, then go after that first—so one change buys you the 
+                that hits the most parts of your life at once, then go after that first... so one change buys you the 
                 biggest possible return. You get practical frameworks, simple experiments to run in the real world, 
                 and clear ways to see what's working and what isn't.
               </p>
               <p>
                 In a world moving this fast, you don't have time for solutions that crawl. You need tools that move 
-                at least as quickly as your problems do—and that's what these books and systems are designed to give you.
+                at least as quickly as your problems do... and that's what these books and systems are designed to give you.
               </p>
             </div>
             <div className="hero-cta">
@@ -62,7 +62,7 @@ export default function Home() {
               who want to actually solve their problems.
             </p>
             <p>
-              Our books provide actionable advice you can use immediately—without needing 
+              Our books provide actionable advice you can use immediately... without needing 
               to "find yourself" or "embrace your journey" first.
             </p>
           </div>
@@ -230,7 +230,7 @@ export default function Home() {
             <p>The exact flow depends on your situation, but generally we:</p>
             <ul>
               <li>
-                <strong>Clarify the problem.</strong> Where does the "rattle" show up—relationships, dating, work, anger, shutdown, anxiety?
+                <strong>Clarify the problem.</strong> Where does the "rattle" show up... relationships, dating, work, anger, shutdown, anxiety?
               </li>
               <li>
                 <strong>Map the pattern.</strong> We look at how your wiring, your history, and your current environment are all feeding this.
@@ -239,7 +239,7 @@ export default function Home() {
                 <strong>Triage the root.</strong> We choose the part that is both most painful and most changeable right now.
               </li>
               <li>
-                <strong>Design experiments.</strong> We co‑create 2–4 specific things to try over the next few weeks: conversations, boundaries, new responses, environmental tweaks.
+                <strong>Design experiments.</strong> We co‑create 2 to 4 specific things to try over the next few weeks: conversations, boundaries, new responses, environmental tweaks.
               </li>
               <li>
                 <strong>Set metrics.</strong> How will you know it's working? What should feel different in a week, a month?
@@ -272,10 +272,10 @@ export default function Home() {
 
           <div className="faq-item">
             <h3>Can we do this online, or does it have to be in person?</h3>
-            <p>Both are possible—but in‑person is better whenever you can swing it.</p>
+            <p>Both are possible... but in‑person is better whenever you can swing it.</p>
             <p>
               Face‑to‑face, people tend to be more honest and less performative. There's no screen or keyboard to hide behind, and a lot of what matters 
-              in this work—body language, nervous‑system reactions, micro‑tells—shows up much more clearly when we're in the same room. Being in the same 
+              in this work... body language, nervous‑system reactions, micro‑tells... shows up much more clearly when we're in the same room. Being in the same 
               physical space makes it harder to stay in "performance mode" and easier to stay with what's real.
             </p>
             <p>I'm based in Bangkok, Thailand. You have two in‑person options:</p>
@@ -311,7 +311,7 @@ export default function Home() {
               If you feel like the day genuinely didn't move the needle for you, you don't owe more than the booking fee.
             </p>
             <p>
-              This structure keeps skin in the game on both sides: you're committing real time and money, and I'm committing to delivering enough value that you want to pay beyond the minimum—not because you're pressured to, but because it helped.
+              This structure keeps skin in the game on both sides: you're committing real time and money, and I'm committing to delivering enough value that you want to pay beyond the minimum... not because you're pressured to, but because it helped.
             </p>
           </div>
 
@@ -334,7 +334,7 @@ export default function Home() {
               <li>The "warning signs" vs "progress signs" to watch for over the next few weeks.</li>
             </ul>
             <p>
-              You implement for a set period (usually 2–4 weeks). If you want a follow‑up to adjust based on what actually happened, we can book a shorter session for that. There is no automatic subscription and no expectation that you'll keep coming forever.
+              You implement for a set period (usually 2 to 4 weeks). If you want a follow‑up to adjust based on what actually happened, we can book a shorter session for that. There is no automatic subscription and no expectation that you'll keep coming forever.
             </p>
             <p>The work only counts if it shows up in your actual life.</p>
           </div>
