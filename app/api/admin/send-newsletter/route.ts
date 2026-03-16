@@ -57,13 +57,40 @@ export async function POST(request: NextRequest) {
       process.env.RESEND_FROM_EMAIL ||
       'admin@wethinktank.org'
 
-    const { data, error } = await resend.emails.send({
-      from: fromEmail,
-      to: recipientEmails,
-      subject,
-      html: html || undefined,
-      text: text || undefined,
-    })
+    // Build payload in a way that satisfies Resend's type requirements:
+    // - If both html and text are present, either html- or text-led variant works.
+    // - If only one is present, use the corresponding required-field variant.
+    let payload:
+      | { from: string; to: string[]; subject: string; html: string; text?: string }
+      | { from: string; to: string[]; subject: string; text: string; html?: string }
+
+    if (html && text) {
+      payload = {
+        from: fromEmail,
+        to: recipientEmails,
+        subject,
+        html,
+        text,
+      }
+    } else if (html) {
+      payload = {
+        from: fromEmail,
+        to: recipientEmails,
+        subject,
+        html,
+      }
+    } else {
+      // At this point we know "text" is truthy because of the earlier validation.
+      payload = {
+        from: fromEmail,
+        to: recipientEmails,
+        subject,
+        text,
+      }
+    }
+
+    // Cast to any to satisfy Resend's overloaded type signatures during build.
+    const { data, error } = await resend.emails.send(payload as any)
 
     if (error) {
       console.error('Resend error when sending newsletter:', error)
