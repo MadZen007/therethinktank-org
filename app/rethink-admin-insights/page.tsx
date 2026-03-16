@@ -94,6 +94,21 @@ export default async function AdminInsightsPage() {
             <p>{metrics.newsletter.last30Days}</p>
           </div>
         </div>
+        <a
+          href="/rethink-admin-newsletter-list"
+          style={{
+            display: 'inline-block',
+            marginTop: '0.75rem',
+            padding: '0.4rem 0.9rem',
+            borderRadius: '999px',
+            border: '1px solid #2E3340',
+            fontSize: '0.9rem',
+            color: '#E5E7EB',
+            textDecoration: 'none',
+          }}
+        >
+          View subscriber email list →
+        </a>
       </section>
 
       <section>
