@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export const dynamic = 'force-dynamic'
 
 export default function AboutPage() {
@@ -31,13 +29,10 @@ export default function AboutPage() {
             border: '2px solid #272B33',
           }}
         >
-          <Image
-            src="/images/the-author.png"
+          <img
+            src="/images/author.png"
             alt="Zen Kyoki"
-            width={360}
-            height={360}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            priority
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
         </div>
         <div>
