@@ -82,7 +82,7 @@ export default async function AdminInsightsPage() {
         </div>
       </section>
 
-      <section>
+      <section style={{ marginBottom: '2rem' }}>
         <h2>Newsletter</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
           <div className="card">
@@ -94,6 +94,95 @@ export default async function AdminInsightsPage() {
             <p>{metrics.newsletter.last30Days}</p>
           </div>
         </div>
+      </section>
+
+      <section>
+        <h2>Send Newsletter Email</h2>
+        <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
+          This will send an email from your admin address to all{' '}
+          <strong>{metrics.newsletter.total}</strong> stored newsletter subscribers in the database.
+        </p>
+
+        <form
+          method="POST"
+          action="/api/admin/send-newsletter"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.75rem',
+            maxWidth: '640px',
+          }}
+        >
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+            <span>Subject</span>
+            <input
+              type="text"
+              name="subject"
+              required
+              placeholder="Newsletter subject"
+              style={{
+                padding: '0.5rem 0.75rem',
+                borderRadius: '0.375rem',
+                border: '1px solid #2E3340',
+                backgroundColor: '#050816',
+                color: 'white',
+              }}
+            />
+          </label>
+
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+            <span>HTML content (optional)</span>
+            <textarea
+              name="html"
+              rows={8}
+              placeholder="You can paste HTML here if you want a formatted email. Leave blank to just send the plain text version below."
+              style={{
+                padding: '0.5rem 0.75rem',
+                borderRadius: '0.375rem',
+                border: '1px solid #2E3340',
+                backgroundColor: '#050816',
+                color: 'white',
+                fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+              }}
+            />
+          </label>
+
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+            <span>Plain text content</span>
+            <textarea
+              name="text"
+              rows={6}
+              required
+              placeholder="Write the text version of your newsletter here."
+              style={{
+                padding: '0.5rem 0.75rem',
+                borderRadius: '0.375rem',
+                border: '1px solid #2E3340',
+                backgroundColor: '#050816',
+                color: 'white',
+                fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif',
+              }}
+            />
+          </label>
+
+          <button
+            type="submit"
+            style={{
+              marginTop: '0.5rem',
+              padding: '0.6rem 1.2rem',
+              borderRadius: '999px',
+              border: 'none',
+              background:
+                'linear-gradient(135deg, #22c55e, #16a34a)',
+              color: 'white',
+              fontWeight: 600,
+              cursor: 'pointer',
+              alignSelf: 'flex-start',
+            }}
+          >
+            Send to all subscribers
+          </button>
+        </form>
       </section>
     </main>
   )
