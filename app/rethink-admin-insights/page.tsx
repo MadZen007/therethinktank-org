@@ -99,8 +99,7 @@ export default async function AdminInsightsPage() {
       <section>
         <h2>Send Newsletter Email</h2>
         <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
-          This will send an email from your admin address to all{' '}
-          <strong>{metrics.newsletter.total}</strong> stored newsletter subscribers in the database.
+          You can either send to your whole newsletter list or send a one-off email to a single address.
         </p>
 
         <form
@@ -113,6 +112,55 @@ export default async function AdminInsightsPage() {
             maxWidth: '640px',
           }}
         >
+          <fieldset
+            style={{
+              border: '1px solid #2E3340',
+              borderRadius: '0.5rem',
+              padding: '0.75rem 1rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem',
+            }}
+          >
+            <legend style={{ padding: '0 0.25rem', color: '#9EA4AE', fontSize: '0.9rem' }}>
+              Recipients
+            </legend>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input
+                type="radio"
+                name="sendMode"
+                value="all"
+                defaultChecked
+              />
+              <span>
+                Send to <strong>all {metrics.newsletter.total}</strong> newsletter subscribers
+              </span>
+            </label>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <input
+                  type="radio"
+                  name="sendMode"
+                  value="single"
+                />
+                <span>Send to a single email address</span>
+              </span>
+              <input
+                type="email"
+                name="singleEmail"
+                placeholder="someone@example.com"
+                style={{
+                  marginLeft: '1.5rem',
+                  padding: '0.5rem 0.75rem',
+                  borderRadius: '0.375rem',
+                  border: '1px solid #2E3340',
+                  backgroundColor: '#050816',
+                  color: 'white',
+                }}
+              />
+            </label>
+          </fieldset>
+
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
             <span>Subject</span>
             <input
