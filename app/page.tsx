@@ -56,16 +56,9 @@ export default function Home() {
               </p>
             </div>
             <div className="hero-cta">
-              <a href="#books" className="btn btn-primary">
-                Start With the Books
+              <a href="/about" className="btn btn-primary">
+                About Me
               </a>
-              <p className="hero-cta-secondary">
-                Or{' '}
-                <a href="/about">
-                  learn more about who&apos;s behind RethinkTank
-                </a>
-                .
-              </p>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ export default function AboutPage() {
           }}
         >
           <Image
-            src="/the-author.png"
+            src="/images/the-author.png"
             alt="Zen Kyoki"
             width={360}
             height={360}
