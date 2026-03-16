@@ -68,16 +68,48 @@ export default function Home() {
       <section className="about" id="about">
         <div className="container">
           <div className="about-content">
-            <h2 className="section-heading">About</h2>
-            <p>
-              RethinkTank delivers blunt, practical self-help that cuts through the noise. 
-              No therapy culture fluff. No empty platitudes. Just real answers for real people 
-              who want to actually solve their problems.
-            </p>
-            <p>
-              Our books provide actionable advice you can use immediately... without needing 
-              to "find yourself" or "embrace your journey" first.
-            </p>
+            <h2 className="section-heading">About Me</h2>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1.75rem',
+              }}
+            >
+              <div
+                style={{
+                  width: '180px',
+                  height: '180px',
+                  borderRadius: '999px',
+                  overflow: 'hidden',
+                  border: '2px solid #272B33',
+                }}
+              >
+                <img
+                  src="/author.png"
+                  alt="Zen Kyoki"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div style={{ maxWidth: '720px', textAlign: 'left' }}>
+                <h3 style={{ marginBottom: '0.25rem', fontSize: '1.75rem' }}>Zen Kyoki</h3>
+                <p style={{ marginBottom: '0.75rem', color: '#9EA4AE' }}>Human Systems Mechanic</p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  Helping people identify the patterns shaping their lives and redesign them.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  Most author bios are written in the third person to sound professional. That’s fine.
+                  But if you ever book a session with me, we’ll be spending an entire day digging into the real mechanics of
+                  your life. Pretending there’s some polished distance between us would be strange, so I’d rather speak
+                  directly.
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  I help people identify the patterns running their lives, understand where those patterns came from, and
+                  design practical experiments to change them.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
