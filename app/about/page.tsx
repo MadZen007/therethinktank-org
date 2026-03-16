@@ -30,7 +30,7 @@ export default function AboutPage() {
           }}
         >
           <img
-            src="/images/author.png"
+            src="/author.png"
             alt="Zen Kyoki"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
