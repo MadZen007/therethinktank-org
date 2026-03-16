@@ -172,34 +172,31 @@ export default function Home() {
 
           <div className="faq-item">
             <h3>Is this therapy?</h3>
-            <p>No. This is not traditional therapy, diagnosis, or medical treatment.</p>
+            <p>No.</p>
+            <p>This is not therapy, diagnosis, or medical treatment.</p>
             <p>
-              Therapy at its best helps you see what's going on under the surface and then change how you live. 
-              The problem is what "therapy culture" often becomes: endless talking, more labels, more self‑analysis…
-              and not much different in your day‑to‑day life.
+              Therapy can be incredibly valuable. But many people eventually reach a point where they don’t need more explanation of their feelings...
+              they need help identifying the pattern that keeps repeating in their life and designing practical ways to change it.
             </p>
             <p>
-              What I offer is a one‑day, plain‑English intensive focused on a specific problem: how it actually works 
-              in your life and what you can start doing differently this week. It's ReThink and ReBuild, not a standing 
-              weekly therapy appointment.
+              What I offer is a one-day intensive focused on a specific problem: how it actually works in your life and what you can start doing differently immediately.
             </p>
+            <p>Think of it less like weekly therapy and more like a deep diagnostic session for your life system.</p>
           </div>
 
           <div className="faq-item">
             <h3>Who is this for?</h3>
-            <p>This is for people who:</p>
+            <p>This work tends to help people who:</p>
             <ul>
               <li>
-                Are stuck in a repeating pattern (relationships, dating, anger, burnout, nervous‑system overwhelm, work/career) 
-                and want it to actually change, not just be explained.
+                feel stuck in repeating patterns (relationships, career, anger, burnout, anxiety)
               </li>
-              <li>Would rather give one serious day to a real reset than drip half‑attention across 30 weeks.</li>
-              <li>Prefer direct, honest, practical conversation over jargon and vague advice.</li>
+              <li>want direct, practical conversations instead of vague advice</li>
+              <li>would rather invest one serious day in solving a problem than stretch it across months</li>
+              <li>are willing to question the assumptions shaping their decisions</li>
             </ul>
             <p>
-              It tends to be a strong fit for men and couples who bounced off traditional "talk about your feelings forever" 
-              approaches and want something more like a focused pit stop: assess the damage, triage the root, and leave with 
-              a concrete plan.
+              It’s especially useful for people who feel like they understand their problems intellectually but still find themselves repeating the same behaviors.
             </p>
           </div>
 
@@ -207,149 +204,150 @@ export default function Home() {
             <h3>Who is this not for?</h3>
             <p>This is not a good fit if:</p>
             <ul>
-              <li>You're in acute crisis that needs medical or emergency care (suicidality, active addiction crisis, untreated severe mental illness).</li>
-              <li>You're looking for long‑term therapy, diagnosis, or medication management.</li>
-              <li>You mainly want a place to vent without any pressure to experiment with new behavior.</li>
+              <li>you are in an acute mental health crisis requiring medical care</li>
+              <li>you need long-term therapy or psychiatric treatment</li>
+              <li>you mainly want a place to vent without experimenting with change</li>
             </ul>
             <p>
-              In those situations, local licensed professionals and crisis services are the right move.
+              In those situations, licensed professionals and local support services are the right option.
             </p>
           </div>
 
           <div className="faq-item">
             <h3>Why a full day instead of weekly sessions?</h3>
             <p>
-              Some problems don't need 40 weeks of circling. They need one good day of telling the truth, mapping the pattern, 
-              and designing specific experiments you can run in real life.
+              Some problems don’t need forty weeks of circling.
             </p>
-            <p>Weekly 50‑minute slots often mean:</p>
+            <p>
+              They need one serious day of truth-telling, pattern mapping, and designing experiments you can run in the real world.
+            </p>
+            <p>Weekly sessions often mean:</p>
             <ul>
-              <li>Spending half the time just getting back into the story.</li>
-              <li>Running out of clock right when things get real.</li>
-              <li>
-                Never having enough space to connect your wiring (biology), the stories you've absorbed (society), and the 
-                environment you're living in (technology, stress, feeds).
-              </li>
+              <li>spending half the time catching up on the story</li>
+              <li>running out of time right when the conversation gets meaningful</li>
+              <li>never having enough space to connect the deeper pattern</li>
             </ul>
             <p>
-              A full day lets us dig past symptoms into the pattern underneath, sort what's in your control from what isn't, 
-              and build a short, testable plan we can stress‑test before you leave. It's triage and rebuild, not a subscription 
-              plan for your pain.
+              A full day allows us to dig past the symptoms, identify the root issue, and leave with a concrete plan.
             </p>
           </div>
 
           <div className="faq-item">
             <h3>What actually happens during the day?</h3>
-            <p>The exact flow depends on your situation, but generally we:</p>
+            <p>The exact flow depends on your situation, but most sessions include five stages.</p>
+            <p>
+              <strong>Clarifying the problem</strong>
+            </p>
+            <p>Where does the “rattle” show up in your life?</p>
+            <p>
+              <strong>Mapping the pattern</strong>
+            </p>
+            <p>We examine how your history, environment, and behavior interact.</p>
+            <p>
+              <strong>Identifying the root cause</strong>
+            </p>
+            <p>We find the part of the system that is both most painful and most changeable.</p>
+            <p>
+              <strong>Designing experiments</strong>
+            </p>
+            <p>We create 2–4 specific actions to test in the real world.</p>
+            <p>
+              <strong>Setting metrics</strong>
+            </p>
+            <p>We define what progress should look like over the next few weeks.</p>
+            <p>
+              The day is intense but not exhausting. There are breaks, and the goal is clarity... not emotional burnout.
+            </p>
+          </div>
+
+          <div className="faq-item">
+            <h3>What if I’m not sure what my problem actually is?</h3>
+            <p>That’s completely normal.</p>
+            <p>
+              Most people arrive with a feeling that something isn’t working, but they can’t clearly explain why.
+            </p>
+            <p>Your job is simply to be honest about two things:</p>
             <ul>
-              <li>
-                <strong>Clarify the problem.</strong> Where does the "rattle" show up... relationships, dating, work, anger, shutdown, anxiety?
-              </li>
-              <li>
-                <strong>Map the pattern.</strong> We look at how your wiring, your history, and your current environment are all feeding this.
-              </li>
-              <li>
-                <strong>Triage the root.</strong> We choose the part that is both most painful and most changeable right now.
-              </li>
-              <li>
-                <strong>Design experiments.</strong> We co‑create 2 to 4 specific things to try over the next few weeks: conversations, boundaries, new responses, environmental tweaks.
-              </li>
-              <li>
-                <strong>Set metrics.</strong> How will you know it's working? What should feel different in a week, a month?
-              </li>
+              <li>what your life currently looks like</li>
+              <li>what you wish was different</li>
             </ul>
             <p>
-              There are breaks. The day is intense, but it's not a grind. You leave tired, clearer, and with a short list of moves 
-              to start running immediately.
+              From there I guide the process. I ask the questions, map the patterns in your past and present behavior, and help us find the disconnect between your goals and the system you’re currently running.
             </p>
+            <p>You don’t need perfect clarity. You just need honesty.</p>
           </div>
 
           <div className="faq-item">
             <h3>How does the initial contact work?</h3>
             <p>The first step is simple and free.</p>
             <p>
-              You fill out the contact form and describe what's going on: what's not working, where you feel stuck, and what you want to be different. 
-              That email gives me a chance to review what kind of help you're looking for and whether this style of work is actually a good fit.
+              You send a message describing what’s going on in your life and what you would like to change.
             </p>
-            <p>I respond to every inquiry with an honest yes or no:</p>
-            <ul>
-              <li>If I'm not the right person, I'll tell you that, so you don't waste your time or money.</li>
-              <li>
-                If it <em>is</em> a good fit, we'll talk about logistics and dates for a full day.
-              </li>
-            </ul>
+            <p>I review every inquiry personally and respond honestly.</p>
             <p>
-              There's no charge for that initial back‑and‑forth. It's there to protect both of us from forcing a bad fit.
+              If I’m not the right person for your situation, I’ll tell you that directly so you don’t waste your time or money.
             </p>
+            <p>If it looks like a good fit, we’ll discuss scheduling a full-day session.</p>
           </div>
 
           <div className="faq-item">
-            <h3>Can we do this online, or does it have to be in person?</h3>
-            <p>Both are possible... but in‑person is better whenever you can swing it.</p>
+            <h3>Can this be done online?</h3>
+            <p>Yes, but in-person sessions are usually more effective.</p>
             <p>
-              Face‑to‑face, people tend to be more honest and less performative. There's no screen or keyboard to hide behind, and a lot of what matters 
-              in this work... body language, nervous‑system reactions, micro‑tells... shows up much more clearly when we're in the same room. Being in the same 
-              physical space makes it harder to stay in "performance mode" and easier to stay with what's real.
+              When we’re in the same room it’s easier to notice the subtle signals (body language, nervous-system reactions, tone shifts) that reveal patterns people may not consciously recognize.
             </p>
-            <p>I'm based in Bangkok, Thailand. You have two in‑person options:</p>
+            <p>I’m based in Bangkok, Thailand.</p>
+            <p>You have two in-person options:</p>
             <ul>
               <li>
-                <strong>Bring me to you.</strong> You cover travel and lodging; I come to your city for the day.
+                travel here for the session (like a vacation!)
               </li>
               <li>
-                <strong>Come to me.</strong> Treat it as a therapeutic mini‑vacation: fly to Thailand, block off a day for the 1x1 session, and use the rest 
-                of the trip to let your system actually downshift.
+                bring me to your city (travel expenses covered by you)
               </li>
             </ul>
             <p>
-              If travel isn't realistic, we can't absolutely run the intensive over video. The key is that you treat it like an in‑person day: full day blocked off, 
-              private space, phone off, no multitasking.
+              If travel isn’t realistic, we can absolutely run the intensive over video.
             </p>
-            <p>In‑person is the A‑tier option. Online is a strong B‑tier if you show up the same way.</p>
+            <p>
+              The key is treating the day the same way: full attention, no multitasking, and a private space.
+            </p>
           </div>
 
           <div className="faq-item">
             <h3>How does pricing work?</h3>
             <p>
-              To reserve a full day, there is a <strong>500 USD non‑refundable booking fee</strong>.
+              To reserve a full-day session there is a <strong>$500 non-refundable booking fee</strong>.
             </p>
             <p>
-              If you bring me to you, you cover travel and lodging at cost. If you come to me in Bangkok, there are no extra expenses on that front beyond your own travel.
+              At the end of the day, you decide what the work was worth to you and pay that amount on top of the booking fee.
             </p>
             <p>
-              After the day, <em>you</em> decide what the work was worth and pay accordingly on top of the booking fee. Most clients land somewhere between 
-              <strong>3,000 and 7,500 USD total</strong>, depending on their situation, means, and the value they feel they received.
+              Most clients land somewhere between <strong>$1000 and $5000 total</strong>, depending on their situation and the value they feel the day created.
             </p>
             <p>
-              If you feel like the day genuinely didn't move the needle for you, you don't owe more than the booking fee.
+              If you genuinely feel the day didn’t move the needle for you, you’re not obligated to pay anything beyond the booking fee.
             </p>
             <p>
-              This structure keeps skin in the game on both sides: you're committing real time and money, and I'm committing to delivering enough value that you want to pay beyond the minimum... not because you're pressured to, but because it helped.
-            </p>
-          </div>
-
-          <div className="faq-item">
-            <h3>What if I can't afford more than the booking fee?</h3>
-            <p>
-              If you already know you can only afford the booking fee, say that up front in your initial email. If the problem is something we can realistically move in a day and the fit is otherwise good, we can decide together whether it still makes sense to work.
-            </p>
-            <p>
-              What doesn't work is hiding your real limits and then feeling guilty or resentful later. Being honest about money is part of the work: the whole point is to make practical decisions that fit your actual reality, not a fantasy version of your life.
+              This structure keeps both sides honest.
             </p>
           </div>
 
           <div className="faq-item">
             <h3>What happens after the day is over?</h3>
-            <p>You leave with a written summary of:</p>
+            <p>
+              You leave with a written summary including:
+            </p>
             <ul>
-              <li>The core pattern we found.</li>
-              <li>The experiments you're going to run.</li>
-              <li>The "warning signs" vs "progress signs" to watch for over the next few weeks.</li>
+              <li>the core pattern we identified</li>
+              <li>the experiments you’ll be running</li>
+              <li>what progress should look like over the next few weeks</li>
             </ul>
             <p>
-              You implement for a set period (usually 2 to 4 weeks). If you want a follow‑up to adjust based on what actually happened, we can book a shorter session for that. There is no automatic subscription and no expectation that you'll keep coming forever.
+              We will schedule a short follow-up session to see how the steps are working for you, and make adjustments if needed. (those are free)
             </p>
-            <p>The work only counts if it shows up in your actual life.</p>
+            <p>There’s no subscription and no expectation of ongoing sessions.</p>
+            <p>The work only matters if it shows up in your real life.</p>
           </div>
         </div>
       </section>
