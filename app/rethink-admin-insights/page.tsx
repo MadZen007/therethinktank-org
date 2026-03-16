@@ -44,11 +44,13 @@ async function getMetricsAndFaqStats() {
 }
 
 export default async function AdminInsightsPage() {
-  const { metrics, faqStats } = ((): { metrics: any; faqStats: { slug: string; title: string; click_count: number }[] } => {
-    // Wrap to keep types simple without introducing extra types everywhere.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return getMetricsAndFaqStats() as any
-  })()
+  const data = await getMetricsAndFaqStats()
+  const metrics = {
+    visits: data.visits,
+    contacts: data.contacts,
+    newsletter: data.newsletter,
+  }
+  const faqStats = data.faqStats
 
   return (
     <main className="admin-page" style={{ padding: '2rem', maxWidth: '960px', margin: '0 auto' }}>
