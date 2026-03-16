@@ -50,7 +50,6 @@ export default async function AdminInsightsPage() {
     contacts: data.contacts,
     newsletter: data.newsletter,
   }
-  const faqStats = data.faqStats
 
   return (
     <main className="admin-page" style={{ padding: '2rem', maxWidth: '960px', margin: '0 auto' }}>
@@ -59,68 +58,7 @@ export default async function AdminInsightsPage() {
         Private dashboard for your eyes only. Bookmark this URL instead of linking it anywhere public.
       </p>
 
-      <section style={{ marginBottom: '2rem' }}>
-        <h2>Traffic</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-          <div className="card">
-            <h3>Visits (last 7 days)</h3>
-            <p>{metrics.visits.last7Days}</p>
-          </div>
-          <div className="card">
-            <h3>Visits (last 30 days)</h3>
-            <p>{metrics.visits.last30Days}</p>
-          </div>
-          <div className="card">
-            <h3>Visits (total)</h3>
-            <p>{metrics.visits.total}</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ marginBottom: '2rem' }}>
-        <h2>Contact Form</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-          <div className="card">
-            <h3>Total inquiries</h3>
-            <p>{metrics.contacts.total}</p>
-          </div>
-          <div className="card">
-            <h3>Inquiries (last 30 days)</h3>
-            <p>{metrics.contacts.last30Days}</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ marginBottom: '2rem' }}>
-        <h2>Newsletter</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-          <div className="card">
-            <h3>Total subscribers</h3>
-            <p>{metrics.newsletter.total}</p>
-          </div>
-          <div className="card">
-            <h3>New subscribers (last 30 days)</h3>
-            <p>{metrics.newsletter.last30Days}</p>
-          </div>
-        </div>
-        <a
-          href="/rethink-admin-newsletter-list"
-          style={{
-            display: 'inline-block',
-            marginTop: '0.75rem',
-            padding: '0.4rem 0.9rem',
-            borderRadius: '999px',
-            border: '1px solid #2E3340',
-            fontSize: '0.9rem',
-            color: '#E5E7EB',
-            textDecoration: 'none',
-          }}
-        >
-          View subscriber email list →
-        </a>
-      </section>
-
-      <section style={{ marginBottom: '2rem' }}>
+      <section style={{ marginBottom: '2.5rem' }}>
         <h2>Send Newsletter Email</h2>
         <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
           You can either send to your whole newsletter list or send a one-off email to a single address.
@@ -258,93 +196,34 @@ export default async function AdminInsightsPage() {
       </section>
 
       <section>
-        <h2>FAQ Engagement</h2>
-        <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
-          Counts how many times each FAQ question has been opened on the public site. Useful for spotting which topics people
-          care about most.
-        </p>
-        {faqStats.length === 0 ? (
-          <p style={{ color: '#9EA4AE' }}>No FAQ clicks recorded yet.</p>
-        ) : (
-          <div
-            style={{
-              borderRadius: '0.75rem',
-              border: '1px solid #2E3340',
-              overflow: 'hidden',
-            }}
-          >
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
-              <thead style={{ backgroundColor: '#050816' }}>
-                <tr>
-                  <th
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.6rem 0.75rem',
-                      borderBottom: '1px solid #2E3340',
-                    }}
-                  >
-                    FAQ Question
-                  </th>
-                  <th
-                    style={{
-                      textAlign: 'right',
-                      padding: '0.6rem 0.75rem',
-                      borderBottom: '1px solid #2E3340',
-                      width: '120px',
-                    }}
-                  >
-                    Opens
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {faqStats.map((row, index) => (
-                  <tr
-                    key={row.slug}
-                    style={{
-                      backgroundColor: index % 2 === 0 ? '#020617' : '#020617',
-                    }}
-                  >
-                    <td
-                      style={{
-                        padding: '0.55rem 0.75rem',
-                        borderBottom: '1px solid #111827',
-                      }}
-                    >
-                      {row.title}
-                    </td>
-                    <td
-                      style={{
-                        padding: '0.55rem 0.75rem',
-                        borderBottom: '1px solid #111827',
-                        textAlign: 'right',
-                      }}
-                    >
-                      {row.click_count}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </section>
-
-      <section style={{ marginTop: '2rem', fontSize: '0.85rem', color: '#9EA4AE' }}>
-        <h2>Debug (temporary)</h2>
-        <pre style={{ whiteSpace: 'pre-wrap', marginTop: '0.5rem' }}>
-{JSON.stringify(
-  {
-    visits: metrics.visits,
-    contacts: metrics.contacts,
-    newsletter: metrics.newsletter,
-    faqStatsCount: faqStats.length,
-    faqStats,
-  },
-  null,
-  2
-)}
-        </pre>
+        <h2>How to View Traffic & FAQ Stats in Vercel</h2>
+        <ol style={{ marginTop: '0.75rem', paddingLeft: '1.25rem', color: '#9EA4AE', lineHeight: 1.6 }}>
+          <li>
+            In your browser, go to <code>vercel.com</code> and log in. In the left sidebar, click <strong>Projects</strong> and
+            open <strong>therethinktank-org</strong>.
+          </li>
+          <li>
+            To see raw page view counts, in the left sidebar click <strong>Storage → rethinktank-org-db</strong>, then click{' '}
+            <strong>Open in Neon</strong>. In the Neon dashboard, open <strong>SQL Editor</strong> and run:
+            <pre style={{ whiteSpace: 'pre-wrap', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+{`SELECT COUNT(*) FROM page_views;`}
+            </pre>
+            This gives you the total number of tracked page views for the site.
+          </li>
+          <li>
+            To see which FAQs people open the most, in the same SQL editor run:
+            <pre style={{ whiteSpace: 'pre-wrap', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+{`SELECT slug, title, click_count
+FROM faq_question_stats
+ORDER BY click_count DESC, title ASC;`}
+            </pre>
+            This shows every FAQ question, its slug, and how many times visitors have opened it.
+          </li>
+          <li>
+            You can save these queries in Neon if you want quick access later, or tweak them (for example adding{' '}
+            <code>LIMIT 10</code>) to only see the top questions.
+          </li>
+        </ol>
       </section>
     </main>
   )
