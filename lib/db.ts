@@ -27,6 +27,15 @@ export async function ensureSchema() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
   `
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS faq_question_stats (
+      id SERIAL PRIMARY KEY,
+      slug TEXT UNIQUE NOT NULL,
+      title TEXT NOT NULL,
+      click_count INT NOT NULL DEFAULT 0
+    );
+  `
 }
 
 export { sql }

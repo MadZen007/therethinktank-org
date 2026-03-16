@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic'
 
 import { ensureSchema, sql } from '@/lib/db'
 
-async function getMetrics() {
+async function getMetricsAndFaqStats() {
   await ensureSchema()
 
   const [
@@ -13,6 +13,7 @@ async function getMetrics() {
     contacts30d,
     newsletterTotal,
     newsletter30d,
+    faqStatsResult,
   ] = await Promise.all([
     sql`SELECT COUNT(*)::int AS count FROM page_views WHERE created_at >= NOW() - INTERVAL '7 days'`,
     sql`SELECT COUNT(*)::int AS count FROM page_views WHERE created_at >= NOW() - INTERVAL '30 days'`,
@@ -21,6 +22,7 @@ async function getMetrics() {
     sql`SELECT COUNT(*)::int AS count FROM contact_submissions WHERE created_at >= NOW() - INTERVAL '30 days'`,
     sql`SELECT COUNT(*)::int AS count FROM newsletter_subscribers`,
     sql`SELECT COUNT(*)::int AS count FROM newsletter_subscribers WHERE created_at >= NOW() - INTERVAL '30 days'`,
+    sql`SELECT slug, title, click_count FROM faq_question_stats ORDER BY click_count DESC, title ASC`,
   ])
 
   return {
@@ -37,11 +39,16 @@ async function getMetrics() {
       total: newsletterTotal.rows[0]?.count ?? 0,
       last30Days: newsletter30d.rows[0]?.count ?? 0,
     },
+    faqStats: faqStatsResult.rows as { slug: string; title: string; click_count: number }[],
   }
 }
 
 export default async function AdminInsightsPage() {
-  const metrics = await getMetrics()
+  const { metrics, faqStats } = ((): { metrics: any; faqStats: { slug: string; title: string; click_count: number }[] } => {
+    // Wrap to keep types simple without introducing extra types everywhere.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return getMetricsAndFaqStats() as any
+  })()
 
   return (
     <main className="admin-page" style={{ padding: '2rem', maxWidth: '960px', margin: '0 auto' }}>
@@ -111,7 +118,7 @@ export default async function AdminInsightsPage() {
         </a>
       </section>
 
-      <section>
+      <section style={{ marginBottom: '2rem' }}>
         <h2>Send Newsletter Email</h2>
         <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
           You can either send to your whole newsletter list or send a one-off email to a single address.
@@ -246,6 +253,79 @@ export default async function AdminInsightsPage() {
             Send to all subscribers
           </button>
         </form>
+      </section>
+
+      <section>
+        <h2>FAQ Engagement</h2>
+        <p style={{ marginTop: '0.5rem', marginBottom: '1rem', color: '#9EA4AE' }}>
+          Counts how many times each FAQ question has been opened on the public site. Useful for spotting which topics people
+          care about most.
+        </p>
+        {faqStats.length === 0 ? (
+          <p style={{ color: '#9EA4AE' }}>No FAQ clicks recorded yet.</p>
+        ) : (
+          <div
+            style={{
+              borderRadius: '0.75rem',
+              border: '1px solid #2E3340',
+              overflow: 'hidden',
+            }}
+          >
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem' }}>
+              <thead style={{ backgroundColor: '#050816' }}>
+                <tr>
+                  <th
+                    style={{
+                      textAlign: 'left',
+                      padding: '0.6rem 0.75rem',
+                      borderBottom: '1px solid #2E3340',
+                    }}
+                  >
+                    FAQ Question
+                  </th>
+                  <th
+                    style={{
+                      textAlign: 'right',
+                      padding: '0.6rem 0.75rem',
+                      borderBottom: '1px solid #2E3340',
+                      width: '120px',
+                    }}
+                  >
+                    Opens
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {faqStats.map((row, index) => (
+                  <tr
+                    key={row.slug}
+                    style={{
+                      backgroundColor: index % 2 === 0 ? '#020617' : '#020617',
+                    }}
+                  >
+                    <td
+                      style={{
+                        padding: '0.55rem 0.75rem',
+                        borderBottom: '1px solid #111827',
+                      }}
+                    >
+                      {row.title}
+                    </td>
+                    <td
+                      style={{
+                        padding: '0.55rem 0.75rem',
+                        borderBottom: '1px solid #111827',
+                        textAlign: 'right',
+                      }}
+                    >
+                      {row.click_count}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
     </main>
   )
