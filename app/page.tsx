@@ -55,11 +55,6 @@ export default function Home() {
                 at least as quickly as your problems do... and that's what these books and systems are designed to give you.
               </p>
             </div>
-            <div className="hero-cta">
-              <a href="/about" className="btn btn-primary">
-                About Me
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -90,7 +85,7 @@ export default function Home() {
                   src="/author.png"
                   alt="Zen Kyoki"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
+                /> 
               </div>
               <div style={{ maxWidth: '720px', textAlign: 'left' }}>
                 <h3 style={{ marginBottom: '0.25rem', fontSize: '1.75rem' }}>Zen Kyoki</h3>
@@ -104,9 +99,42 @@ export default function Home() {
                   your life. Pretending there’s some polished distance between us would be strange, so I’d rather speak
                   directly.
                 </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  I’m not a guru. I’m not a motivational speaker. And I’m not interested in selling you a personality cult.
+                  What I do is much simpler: I help people identify the patterns running their lives, understand where those
+                  patterns came from, and design practical experiments to change them.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  I grew up between two very different influences. My mother was a prison psychologist with two PhDs, so I
+                  grew up hearing case studies about how people justify their actions, sabotage themselves, and build
+                  narratives around their behavior. My father’s rule was simple: <em>Watch what people do, not what they say.</em>
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  Between those two poles I learned to pay attention to both why people believe what they believe and what
+                  their behavior actually proves. Over the years I’ve listened to thousands of hours of people explaining
+                  their lives and compared those explanations to how they actually live. That gap is where most life problems
+                  live.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  My career path has been anything but linear. I’ve worked as a corporate manager, a tattoo artist, a
+                  furniture designer for the sex industry, and an unofficial sounding board for countless people trying to
+                  figure out their relationships, careers, and identities. Different environments, same core issue: people
+                  trying to solve problems without understanding the system creating them.
+                </p>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  A few years ago I hit my own perfect storm of isolation and financial collapse — the kind of moment where
+                  your usual explanations stop working. For me that moment happened on a balcony in Bangkok, asking a very
+                  simple question: <em>What if the way I’ve been thinking about my life is wrong?</em> Everything I do now —
+                  the books, the ReThink project, and the sessions I offer — grew out of rebuilding my own mental framework
+                  from the ground up.
+                </p>
                 <p style={{ marginBottom: 0 }}>
-                  I help people identify the patterns running their lives, understand where those patterns came from, and
-                  design practical experiments to change them.
+                  When someone books a session, we spend a full day examining the system underneath their biggest problem —
+                  not just the symptom, the pattern. Your job isn’t to arrive with a perfectly explained issue. Your job is to
+                  be honest about what your life actually looks like right now and what you wish were different. From there I
+                  do most of the driving: asking questions, mapping patterns in your behavior and environment, and helping us
+                  design real-world experiments you can run immediately. The goal is simple: help you recognize the system
+                  shaping your life so you can consciously redesign it and start steering instead of just reacting.
                 </p>
               </div>
             </div>
