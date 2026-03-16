@@ -329,6 +329,23 @@ export default async function AdminInsightsPage() {
           </div>
         )}
       </section>
+
+      <section style={{ marginTop: '2rem', fontSize: '0.85rem', color: '#9EA4AE' }}>
+        <h2>Debug (temporary)</h2>
+        <pre style={{ whiteSpace: 'pre-wrap', marginTop: '0.5rem' }}>
+{JSON.stringify(
+  {
+    visits: metrics.visits,
+    contacts: metrics.contacts,
+    newsletter: metrics.newsletter,
+    faqStatsCount: faqStats.length,
+    faqStats,
+  },
+  null,
+  2
+)}
+        </pre>
+      </section>
     </main>
   )
 }
