@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
     const fromEmail =
       process.env.NEWSLETTER_FROM_EMAIL ||
       process.env.RESEND_FROM_EMAIL ||
-      'admin@rethinktank.org'
+      'admin@therethinktank.org'
 
     // Build payload in a way that satisfies Resend's type requirements:
     // - If both html and text are present, either html- or text-led variant works.
