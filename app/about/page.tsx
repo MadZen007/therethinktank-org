@@ -3,21 +3,26 @@ export const dynamic = 'force-dynamic'
 export default function AboutPage() {
   return (
     <main style={{ padding: '2rem 1rem', maxWidth: '960px', margin: '0 auto' }}>
-      <a
-        href="/"
-        style={{
-          display: 'inline-block',
-          marginBottom: '1.5rem',
-          padding: '0.4rem 0.9rem',
-          borderRadius: '999px',
-          border: '1px solid #272B33',
-          color: '#E5E7EB',
-          textDecoration: 'none',
-          fontSize: '0.9rem',
-        }}
-      >
-        ← Back to Home
-      </a>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <a
+          href="/"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            padding: '0.4rem 0.9rem',
+            borderRadius: '999px',
+            border: '1px solid #272B33',
+            color: '#E5E7EB',
+            textDecoration: 'none',
+            fontSize: '0.9rem',
+            backgroundColor: '#020617',
+          }}
+        >
+          <span style={{ fontSize: '0.9rem' }}>←</span>
+          <span>Back to Home</span>
+        </a>
+      </div>
 
       <header style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
         <div
@@ -157,6 +162,27 @@ export default function AboutPage() {
         </p>
         <p>You can start steering.</p>
       </section>
+      
+      <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+        <a
+          href="/"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            padding: '0.4rem 0.9rem',
+            borderRadius: '999px',
+            border: '1px solid #272B33',
+            color: '#E5E7EB',
+            textDecoration: 'none',
+            fontSize: '0.9rem',
+            backgroundColor: '#020617',
+          }}
+        >
+          <span style={{ fontSize: '0.9rem' }}>←</span>
+          <span>Back to Home</span>
+        </a>
+      </div>
     </main>
   )
 }
