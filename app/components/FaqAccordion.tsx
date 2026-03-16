@@ -216,19 +216,13 @@ const FAQ_ITEMS: FaqItem[] = [
 
 export default function FaqAccordion() {
   const [openSlug, setOpenSlug] = useState<string | null>(null)
-  const [alreadyTracked, setAlreadyTracked] = useState<Set<string>>(new Set())
 
   const handleToggle = async (item: FaqItem) => {
     const nextOpen = openSlug === item.slug ? null : item.slug
     setOpenSlug(nextOpen)
 
-    if (!alreadyTracked.has(item.slug)) {
-      setAlreadyTracked(prev => {
-        const next = new Set(prev)
-        next.add(item.slug)
-        return next
-      })
-
+    // Only track when a question is being opened, not closed.
+    if (nextOpen === item.slug) {
       try {
         await fetch('/api/faq-click', {
           method: 'POST',
